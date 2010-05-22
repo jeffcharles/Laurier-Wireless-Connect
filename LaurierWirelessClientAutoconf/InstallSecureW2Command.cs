@@ -22,6 +22,9 @@
 // </copyright>
 #endregion
 
+using System.IO;
+using System.Reflection;
+
 namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 {
     class InstallSecureW2Command : ICommand
@@ -55,14 +58,35 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         }
 
         /// <summary>
-        /// Silently nstalls the SecureW2 EAP client
+        /// Silently installs the SecureW2 EAP client
         /// </summary>
         /// <returns>Whether the installation was successful</returns>
         public bool Execute()
         {
-            System.Diagnostics.Process.Start(@"SecureW2_Install /S");
-            // TODO: check std output and err for output
-            return true;
+            WriteInstallerToDisk();
+            System.Diagnostics.Process installSecureW2 = System.Diagnostics.Process.Start(SetupInstallProcess());
+
+            StreamReader stdOutput = installSecureW2.StandardOutput;
+            StreamReader stdErr = installSecureW2.StandardError;
+            installSecureW2.WaitForExit();
+
+            // TODO: Return what is in standard error or standard output or null if nothing
+            return (stdOutput.ReadToEnd() == "" && stdErr.ReadToEnd() == "") ? true : false;
+        }
+
+        /// <summary>
+        /// Creates and prepares the process start info for the installer process
+        /// </summary>
+        /// <returns>A configured process start info object</returns>
+        protected System.Diagnostics.ProcessStartInfo SetupInstallProcess()
+        {
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("SecureW2_EAP_Suite_106.exe", "/S");
+            psi.RedirectStandardError = true;
+            psi.RedirectStandardOutput = true;
+            psi.UseShellExecute = false;
+            psi.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+
+            return psi;
         }
 
         /// <summary>
@@ -74,6 +98,23 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             System.Diagnostics.Process.Start(@"C:/Program Files/SecureW2/uninstall /S"); // TODO: Check that this actually works
             // TODO: check std output and err for output
             return true;
+        }
+
+        /// <summary>
+        /// Writes the SecureW2 Installer executable file to disk
+        /// </summary>
+        protected void WriteInstallerToDisk()
+        {
+            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream("LaurierWirelessClientAutoconf.SecureW2_EAP_Suite_106.exe"))
+            using (Stream output = File.Create("SecureW2_EAP_Suite_106.exe"))
+            {
+                byte[] buffer = new byte[8192];
+                int bytesRead;
+                while ((bytesRead = input.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    output.Write(buffer, 0, bytesRead);
+                }
+            }
         }
     }
 }
