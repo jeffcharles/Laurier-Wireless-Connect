@@ -65,23 +65,34 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         public bool Execute()
         {
             WriteInstallerToDisk();
-            Process installSecureW2 = Process.Start(SetupInstallProcess());
+            Process installSecureW2 = Process.Start(SetupProcess("SecureW2_EAP_Suite_106", "/S"));
+            return MonitorProcessOutput(installSecureW2);
+        }
 
-            StreamReader stdOutput = installSecureW2.StandardOutput;
-            StreamReader stdErr = installSecureW2.StandardError;
-            installSecureW2.WaitForExit();
+        /// <summary>
+        /// Checks the std output and err of the provided process and returns true if neither contains anything
+        /// </summary>
+        /// <param name="process">The process to monitor standard output and error for</param>
+        /// <returns>True if there is no standard output or error, false if there is</returns>
+        protected bool MonitorProcessOutput(Process process)
+        {
+            StreamReader stdOutput = process.StandardOutput;
+            StreamReader stdErr = process.StandardError;
+            process.WaitForExit();
 
             // TODO: Return what is in standard error or standard output or null if nothing
             return (stdOutput.ReadToEnd() == "" && stdErr.ReadToEnd() == "") ? true : false;
         }
-
+        
         /// <summary>
-        /// Creates and prepares the process start info for the installer process
+        /// Creates and prepares the process start info for the installer or uninstaller process
         /// </summary>
+        /// <param name="filePath">The path to the application to execute</param>
+        /// <param name="arguments">Any arguments for the application to execute</param>
         /// <returns>A configured process start info object</returns>
-        protected ProcessStartInfo SetupInstallProcess()
+        protected ProcessStartInfo SetupProcess(string filePath, string arguments)
         {
-            ProcessStartInfo psi = new ProcessStartInfo("SecureW2_EAP_Suite_106.exe", "/S");
+            ProcessStartInfo psi = new ProcessStartInfo(filePath, arguments);
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
             psi.UseShellExecute = false;
@@ -96,9 +107,8 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>Whether the uninstallation was successful</returns>
         public bool Undo()
         {
-            Process.Start(@"C:/Program Files/SecureW2/uninstall /S"); // TODO: Check that this actually works
-            // TODO: check std output and err for output
-            return true;
+            Process uninstallSecureW2 = Process.Start(SetupProcess("C:/Program Files/SecureW2/Uninstall", "/S"));
+            return MonitorProcessOutput(uninstallSecureW2);
         }
 
         /// <summary>
