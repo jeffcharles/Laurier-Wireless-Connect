@@ -6,7 +6,7 @@ syntax: glob
 
 # Ignore Visual Studio 2010 files
 *.obj
-*.exe
+# *.exe -- need to exclude in ignore because of SecureW2 installer
 *.pdb
 *.user
 *.aps
