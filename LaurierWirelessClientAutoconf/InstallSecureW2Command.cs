@@ -22,6 +22,7 @@
 // </copyright>
 #endregion
 
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -64,7 +65,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         public bool Execute()
         {
             WriteInstallerToDisk();
-            System.Diagnostics.Process installSecureW2 = System.Diagnostics.Process.Start(SetupInstallProcess());
+            Process installSecureW2 = Process.Start(SetupInstallProcess());
 
             StreamReader stdOutput = installSecureW2.StandardOutput;
             StreamReader stdErr = installSecureW2.StandardError;
@@ -78,13 +79,13 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// Creates and prepares the process start info for the installer process
         /// </summary>
         /// <returns>A configured process start info object</returns>
-        protected System.Diagnostics.ProcessStartInfo SetupInstallProcess()
+        protected ProcessStartInfo SetupInstallProcess()
         {
-            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo("SecureW2_EAP_Suite_106.exe", "/S");
+            ProcessStartInfo psi = new ProcessStartInfo("SecureW2_EAP_Suite_106.exe", "/S");
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
             psi.UseShellExecute = false;
-            psi.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            psi.WindowStyle = ProcessWindowStyle.Hidden;
 
             return psi;
         }
@@ -95,7 +96,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>Whether the uninstallation was successful</returns>
         public bool Undo()
         {
-            System.Diagnostics.Process.Start(@"C:/Program Files/SecureW2/uninstall /S"); // TODO: Check that this actually works
+            Process.Start(@"C:/Program Files/SecureW2/uninstall /S"); // TODO: Check that this actually works
             // TODO: check std output and err for output
             return true;
         }
