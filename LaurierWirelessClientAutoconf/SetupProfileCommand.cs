@@ -22,6 +22,8 @@
 // </copyright>
 #endregion
 
+using System.Reflection;
+
 namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 {
     class SetupProfileCommand : ICommand
@@ -60,12 +62,18 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>Whether the profile was added successfully</returns>
         public bool Execute()
         {
-            NativeWifi.WlanClient client = new NativeWifi.WlanClient();
-            foreach (NativeWifi.WlanClient.WlanInterface wlanIface in client.Interfaces)
+            string laurierWirelessXml = getLaurierWirelessXml();
+            if (laurierWirelessXml != null)
             {
-                wlanIface.SetProfile(0, getLaurierWirelessXml(), true);
+                NativeWifi.WlanClient client = new NativeWifi.WlanClient();
+                foreach (NativeWifi.WlanClient.WlanInterface wlanIface in client.Interfaces)
+                {
+                    wlanIface.SetProfile(0, laurierWirelessXml, true);
+                }
+                return true;
             }
-            return true;
+            // TODO: flag that there was an issue reading the embedded resource
+            return false;
         }
 
         /// <summary>
@@ -77,14 +85,24 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             string filename = "";
             if (System.Environment.OSVersion.Version.Major == 5)
             {
-                filename = "laurierwirelessprofile_nt5.xml";
+                filename = "LaurierWirelessClientAutoconf.laurierwirelessprofile_nt5.xml";
             }
             else
             {
-                filename = "laurierwirelessprofile_nt6.xml";
+                filename = "LaurierWirelessClientAutoconf.laurierwirelessprofile_nt6.xml";
             }
-            System.IO.StreamReader sr = new System.IO.StreamReader(filename);
-            return sr.ReadToEnd();
+
+            try
+            {
+                System.IO.StreamReader sr =
+                    new System.IO.StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(filename));
+                return sr.ReadToEnd();
+            }
+            catch
+            {
+                // TODO: flat that there was an issue reading the embedded resource
+                return null;
+            }
         }
 
         /// <summary>
