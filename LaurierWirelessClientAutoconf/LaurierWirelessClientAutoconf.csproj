@@ -72,12 +72,22 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="SecureW2_ProfileSetup.reg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\managedwifi-1.1\ManagedWifi.csproj">
       <Project>{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}</Project>
       <Name>ManagedWifi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="laurierwirelessprofile_nt5.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="laurierwirelessprofile_nt6.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SecureW2_EAP_Suite_106.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
