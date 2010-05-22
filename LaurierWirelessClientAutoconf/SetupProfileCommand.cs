@@ -94,9 +94,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 
             try
             {
-                System.IO.StreamReader sr =
-                    new System.IO.StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(filename));
-                return sr.ReadToEnd();
+                using (System.IO.StreamReader sr =
+                    new System.IO.StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(filename)))
+                {
+                    return sr.ReadToEnd();
+                }
             }
             catch
             {
