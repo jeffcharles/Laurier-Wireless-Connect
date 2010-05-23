@@ -22,6 +22,7 @@
 // </copyright>
 #endregion
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -34,11 +35,19 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// Checks the std output and err of the provided process and returns true if neither contains anything
         /// </summary>
         /// <param name="process">The process to monitor standard output and error for</param>
-        public static void MonitorProcessOutput(Process process)
+        /// <param name="errorMsgIfFailure">A general error message to display if the process fails</param>
+        public static void MonitorProcessOutput(Process process, string errorMsgIfFailure)
         {
             string stdErr = process.StandardError.ReadToEnd();
             process.WaitForExit();
-            // TODO: Throw exception if there is something in stdErr
+            if (process.ExitCode != 0)
+            {
+                throw new ProcessException(errorMsgIfFailure, process.ExitCode);
+            }
+            else if(stdErr != "")
+            {
+                throw new ProcessException(errorMsgIfFailure, stdErr);
+            }
         }
 
         /// <summary>

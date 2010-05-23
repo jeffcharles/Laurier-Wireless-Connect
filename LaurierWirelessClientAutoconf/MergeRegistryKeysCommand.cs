@@ -67,7 +67,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         {
             HelperMethods.WriteEmbeddedFileToDisk("SecureW2_ProfileSetup.reg");
             Process mergeRegistryKeys = Process.Start(HelperMethods.SetupProcess("REG", "IMPORT SecureW2_ProfileSetup.reg"));
-            HelperMethods.MonitorProcessOutput(mergeRegistryKeys);
+            HelperMethods.MonitorProcessOutput(mergeRegistryKeys, "Error importing SecureW2 registry keys");
         }
     }
 }
