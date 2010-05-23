@@ -40,6 +40,7 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HelperMethods.cs" />
     <Compile Include="InstallSecureW2Command.cs" />
     <Compile Include="FormSetupProgress.cs">
       <SubType>Form</SubType>
