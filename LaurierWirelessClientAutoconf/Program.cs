@@ -43,9 +43,16 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
             ICommand setupProfile = new SetupProfileCommand();
 
-            installSecureW2.Execute();
-            mergeRegistryKeys.Execute();
-            setupProfile.Execute();
+            try
+            {
+                installSecureW2.Execute();
+                mergeRegistryKeys.Execute();
+                setupProfile.Execute();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error occurred: " + e.Message);
+            }
 
             Application.Exit();
         }
