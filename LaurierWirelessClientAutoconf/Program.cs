@@ -35,6 +35,23 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         [STAThread]
         static void Main()
         {
+            if (!IsClientSupportable())
+            {
+                MessageBox.Show("Your operating system does not meet the minimum requirements for this application.",
+                    "Unsupportable operating system");
+                Application.Exit();
+            }
+            
+            if (!IsClientOfficiallySupported())
+            {
+                if(MessageBox.Show(@"This application has not been tested on your operating system. 
+                    It may or may not run successfully. Do you wish to continue?", "Unsupported operating system",
+                                                                                 MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormSetupProgress());
@@ -57,20 +74,39 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             Application.Exit();
         }
 
-        static bool isClientSupported()
+        /// <summary>
+        /// Returns whether the application has been tested successfully on this operating system
+        /// </summary>
+        /// <returns>True if the application has been tested successfully with this operating system, false if not</returns>
+        static bool IsClientOfficiallySupported()
         {
             System.OperatingSystem osInfo = System.Environment.OSVersion;
 
-            if ((osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && Convert.ToInt16(osInfo.ServicePack) >= 3) ||
-                (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && Convert.ToInt16(osInfo.ServicePack) >= 2) ||
-                (osInfo.Version.Major == 6 && osInfo.Version.Minor >= 1) && (osInfo.Version.Major >= 7))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            Version requiredMinimumVersion = new Version(5, 1, 5512);
+
+            bool isXpSp3 = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && osInfo.Version.Build == 5512);
+            bool isVistaSp2 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && osInfo.Version.Build == 6002);
+            bool is7Sp0 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1 && osInfo.Version.Build == 7600);
+
+            return (isXpSp3 || isVistaSp2 || is7Sp0) ? true : false;
+        }
+
+        /// <summary>
+        /// Returns whether this application should work on this operating system
+        /// </summary>
+        /// <returns>True if the application should run successfully on this operating system, false if not</returns>
+        static bool IsClientSupportable()
+        {
+            System.OperatingSystem osInfo = System.Environment.OSVersion;
+
+            Version requiredMinimumVersion = new Version(5, 1, 5512);
+
+            bool isXpSp3OrGreater = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && osInfo.Version.Build >= 5512);
+            bool isVistaSp2OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && osInfo.Version.Build >= 6002);
+            bool is7Sp0OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1  && osInfo.Version.Build >= 7600);
+            bool isGreaterThan7 = (osInfo.Version.Major >= 7);
+
+            return (isXpSp3OrGreater || isVistaSp2OrGreater || is7Sp0OrGreater || isGreaterThan7) ? true : false;
         }
     }
 }
