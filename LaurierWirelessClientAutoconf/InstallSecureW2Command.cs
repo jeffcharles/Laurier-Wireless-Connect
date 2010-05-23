@@ -74,7 +74,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>True if the client is installed, false if not</returns>
         protected bool IsInstalled()
         {
-            return File.Exists("C:/WINDOWS/system32/sw2_ttls_manager.exe");
+            return (File.Exists("C:/Program Files/SecureW2/Uninstall.exe") || File.Exists("C:/Program Files (x86)/SecureW2/Uninstall.exe"));
         }
     }
 }
