@@ -35,22 +35,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         [STAThread]
         static void Main()
         {
-            if (!IsClientSupportable())
-            {
-                MessageBox.Show("Your operating system does not meet the minimum requirements for this application.",
-                    "Unsupportable operating system");
-                Application.Exit();
-            }
-            
-            if (!IsClientOfficiallySupported())
-            {
-                if(MessageBox.Show(@"This application has not been tested on your operating system. 
-                    It may or may not run successfully. Do you wish to continue?", "Unsupported operating system",
-                                                                                 MessageBoxButtons.YesNo) == DialogResult.No)
-                {
-                    Application.Exit();
-                }
-            }
+            CheckOperatingSystem();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -72,6 +57,29 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             }
 
             Application.Exit();
+        }
+
+        /// <summary>
+        /// Checks if operating system is officially supported or supportable and prompts user accordingly
+        /// </summary>
+        static void CheckOperatingSystem()
+        {
+            if (!IsClientSupportable())
+            {
+                MessageBox.Show("Your operating system does not meet the minimum requirements for this application.",
+                    "Unsupportable operating system");
+                Application.Exit();
+            }
+
+            if (!IsClientOfficiallySupported())
+            {
+                if (MessageBox.Show(@"This application has not been tested on your operating system. 
+                    It may or may not run successfully. Do you wish to continue?", "Unsupported operating system",
+                                                                                 MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         /// <summary>
