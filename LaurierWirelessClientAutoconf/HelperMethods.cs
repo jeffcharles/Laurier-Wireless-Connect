@@ -39,6 +39,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <param name="errorMsgIfFailure">A general error message to display if the process fails</param>
         public static void MonitorProcessOutput(Process process, string errorMsgIfFailure)
         {
+            if (process == null || errorMsgIfFailure == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             string stdErr = process.StandardError.ReadToEnd();
             process.WaitForExit();
             if (process.ExitCode != 0)
