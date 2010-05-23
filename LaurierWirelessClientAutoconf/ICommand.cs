@@ -31,6 +31,5 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         string HumanReadableUndoDescription { get; }
 
         bool Execute();
-        bool Undo();
     }
 }

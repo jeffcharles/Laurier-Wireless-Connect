@@ -61,49 +61,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         }
 
         /// <summary>
-        /// Deletes the SecureW2 sub key tree of the specified registry branch
-        /// </summary>
-        /// <param name="branch">The registry branch from which to delete the SecureW2 entries</param>
-        /// <returns>Whether the delete was successful or not</returns>
-        protected bool DeleteSecureW2SubKeyTree(RegistryKey branch)
-        {
-            using (RegistryKey key = branch.OpenSubKey("Software", true))
-            {
-                if (key != null)
-                {
-                    try
-                    {
-                        key.DeleteSubKeyTree("SecureW2");
-                    }
-                    catch (ArgumentException)
-                    {
-                        // means subkey not in tree, good thing?
-                        return true;
-                    }
-                    catch (System.IO.IOException)
-                    {
-                        // registry locked for some reason?
-                        // TODO: Maybe have code retry a set number of times
-                        return false;
-                    }
-                    catch (System.Security.SecurityException)
-                    {
-                        // user does not have permissions required to delete key
-                        // TODO: Alert user that they need admin permissions
-                        return false;
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                        // user does not have necessary registry rights
-                        // TODO: Alert user that they need admin permissions
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
-        /// <summary>
         /// Merge SecureW2 default profile settings and blank user credentials for profile into the registry
         /// </summary>
         /// <returns>Whether merge was successful</returns>
@@ -112,16 +69,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             HelperMethods.WriteEmbeddedFileToDisk("SecureW2_ProfileSetup.reg");
             Process mergeRegistryKeys = Process.Start(HelperMethods.SetupProcess("REG", "IMPORT SecureW2_ProfileSetup.reg"));
             return HelperMethods.MonitorProcessOutput(mergeRegistryKeys);
-        }
-
-        /// <summary>
-        /// Delete the registry keys for the SecureW2 default profile and user credentials for profile
-        /// </summary>
-        /// <returns>Whether delete was successful or not</returns>
-        public bool Undo()
-        {
-            return DeleteSecureW2SubKeyTree(Registry.CurrentUser) && 
-                DeleteSecureW2SubKeyTree(Registry.LocalMachine);
         }
     }
 }

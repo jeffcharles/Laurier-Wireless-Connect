@@ -106,19 +106,5 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                 return null;
             }
         }
-
-        /// <summary>
-        /// Removes the Laurier Wireless profile from the Windows wireless profiles
-        /// </summary>
-        /// <returns>Whether the profile was removed successfully</returns>
-        public bool Undo()
-        {
-            NativeWifi.WlanClient client = new NativeWifi.WlanClient();
-            foreach (NativeWifi.WlanClient.WlanInterface wlanIface in client.Interfaces)
-            {
-                wlanIface.DeleteProfile("laurierwireless");
-            }
-            return true;
-        }
     }
 }

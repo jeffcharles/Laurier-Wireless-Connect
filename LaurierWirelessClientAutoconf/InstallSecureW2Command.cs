@@ -68,15 +68,5 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             Process installSecureW2 = Process.Start(HelperMethods.SetupProcess("SecureW2_EAP_Suite_106", "/S"));
             return HelperMethods.MonitorProcessOutput(installSecureW2);
         }
-
-        /// <summary>
-        /// Silently uninstalls the SecureW2 EAP client
-        /// </summary>
-        /// <returns>Whether the uninstallation was successful</returns>
-        public bool Undo()
-        {
-            Process uninstallSecureW2 = Process.Start(HelperMethods.SetupProcess("C:/Program Files/SecureW2/Uninstall", "/S"));
-            return HelperMethods.MonitorProcessOutput(uninstallSecureW2);
-        }
     }
 }
