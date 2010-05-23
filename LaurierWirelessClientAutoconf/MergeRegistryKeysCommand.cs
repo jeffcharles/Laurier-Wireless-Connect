@@ -34,7 +34,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
     {
         private const string humanReadableDescription = "Register SecureW2 EAP client settings";
         private const string humanReadableExecutionDescription = "Now registering SecureW2 EAP client settings";
-        private const string humanReadableUndoDescription = "Now deleting SecureW2 EAP client registry keys";
 
         public string HumanReadableDescription
         {
@@ -49,14 +48,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             get
             {
                 return humanReadableExecutionDescription;
-            }
-        }
-
-        public string HumanReadableUndoDescription
-        {
-            get
-            {
-                return humanReadableUndoDescription;
             }
         }
 

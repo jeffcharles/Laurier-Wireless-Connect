@@ -30,7 +30,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
     {
         private const string humanReadableDescription = "Setup Laurier Wireless Windows wireless profile";
         private const string humanReadableExecutionDescription = "Now setting up Laurier Wireless Windows wireless profile";
-        private const string humanReadableUndoDescription = "Now deleting Laurier Wireless Windows wireless profile";
 
         public string HumanReadableDescription
         {
@@ -45,14 +44,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             get
             {
                 return humanReadableExecutionDescription;
-            }
-        }
-
-        public string HumanReadableUndoDescription
-        {
-            get
-            {
-                return humanReadableUndoDescription;
             }
         }
 
