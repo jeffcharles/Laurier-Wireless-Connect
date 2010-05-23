@@ -22,6 +22,7 @@
 // </copyright>
 #endregion
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -63,9 +64,25 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// </summary>
         public void Execute()
         {
-            HelperMethods.WriteEmbeddedFileToDisk("SecureW2_EAP_Suite_106.exe");
-            Process installSecureW2 = Process.Start(HelperMethods.SetupProcess("SecureW2_EAP_Suite_106", "/S"));
-            HelperMethods.MonitorProcessOutput(installSecureW2, "Error installing SecureW2 EAP client");
+            if (!IsInstalled())
+            {
+                HelperMethods.WriteEmbeddedFileToDisk("SecureW2_EAP_Suite_106.exe");
+                Process installSecureW2 = Process.Start(HelperMethods.SetupProcess("SecureW2_EAP_Suite_106", "/S"));
+                HelperMethods.MonitorProcessOutput(installSecureW2, "Error installing SecureW2 EAP client");
+                if (!IsInstalled())
+                {
+                    throw new ApplicationException("Error installing SecureW2 EAP client");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Returns whether the SecureW2 EAP client is installed
+        /// </summary>
+        /// <returns>True if the client is installed, false if not</returns>
+        protected bool IsInstalled()
+        {
+            return File.Exists("C:/WINDOWS/system32/sw2_ttls_manager.exe");
         }
     }
 }
