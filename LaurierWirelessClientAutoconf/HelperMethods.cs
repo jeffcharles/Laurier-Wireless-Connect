@@ -84,6 +84,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                     output.Write(buffer, 0, bytesRead);
                 }
             }
+
+            if (!File.Exists(filename))
+            {
+                throw new IOException("Error writing " + filename + " to disk.");
+            }
         }
     }
 }
