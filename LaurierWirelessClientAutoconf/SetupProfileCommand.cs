@@ -52,7 +52,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// </summary>
         public void Execute()
         {
-            string laurierWirelessXml = getLaurierWirelessXml();
+            string laurierWirelessXml = GetLaurierWirelessXml();
             if (laurierWirelessXml != null)
             {
                 NativeWifi.WlanClient client = new NativeWifi.WlanClient();
@@ -67,7 +67,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// Return the appropriate Windows Native Wifi XML configuration for Laurier Wireless
         /// </summary>
         /// <returns>The XML configuration for Laurier Wireless for use with the Windows Native Wifi API</returns>
-        protected string getLaurierWirelessXml()
+        protected string GetLaurierWirelessXml()
         {
             string filename = "";
             if (System.Environment.OSVersion.Version.Major == 5)
