@@ -84,6 +84,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <param name="filename">The name of the embedded file to write to disk</param>
         public static void WriteEmbeddedFileToDisk(string filename)
         {
+            if (filename == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream("LaurierWirelessClientAutoconf." + filename))
             using (Stream output = File.Create(filename))
             {
