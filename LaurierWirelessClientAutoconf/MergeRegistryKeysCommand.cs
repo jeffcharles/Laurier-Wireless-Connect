@@ -24,6 +24,9 @@
 
 using Microsoft.Win32;
 using System;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
 
 namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 {
@@ -106,8 +109,9 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>Whether merge was successful</returns>
         public bool Execute()
         {
-            System.Diagnostics.Process.Start(@"REG IMPORT SecureW2_ProfileSetup.reg");
-            return true;
+            HelperMethods.WriteEmbeddedFileToDisk("SecureW2_ProfileSetup.reg");
+            Process mergeRegistryKeys = Process.Start(HelperMethods.SetupProcess("REG", "IMPORT SecureW2_ProfileSetup.reg"));
+            return HelperMethods.MonitorProcessOutput(mergeRegistryKeys);
         }
 
         /// <summary>
