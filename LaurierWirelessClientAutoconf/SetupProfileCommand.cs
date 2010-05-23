@@ -79,18 +79,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                 filename = "LaurierWirelessClientAutoconf.laurierwirelessprofile_nt6.xml";
             }
 
-            try
+            
+            using (System.IO.StreamReader sr =
+                new System.IO.StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(filename)))
             {
-                using (System.IO.StreamReader sr =
-                    new System.IO.StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream(filename)))
-                {
-                    return sr.ReadToEnd();
-                }
-            }
-            catch
-            {
-                // TODO: flat that there was an issue reading the embedded resource
-                return null;
+                return sr.ReadToEnd();
             }
         }
     }
