@@ -32,7 +32,8 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
     static class HelperMethods
     {
         /// <summary>
-        /// Checks the std output and err of the provided process and returns true if neither contains anything
+        /// Checks the exit code and standard error of the process after the process exits and raises an
+        /// exception if there is a problem
         /// </summary>
         /// <param name="process">The process to monitor standard output and error for</param>
         /// <param name="errorMsgIfFailure">A general error message to display if the process fails</param>
