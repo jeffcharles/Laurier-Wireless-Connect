@@ -89,7 +89,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                 throw new ArgumentNullException();
             }
 
-            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream("LaurierWirelessClientAutoconf." + filename))
+            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream("OpenSourceAtLaurier.LaurierWirelessClientAutoconf." + filename))
             using (Stream output = File.Create(filename))
             {
                 byte[] buffer = new byte[8192];
