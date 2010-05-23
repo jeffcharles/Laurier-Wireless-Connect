@@ -30,6 +30,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         string HumanReadableExecutionDescription { get; }
         string HumanReadableUndoDescription { get; }
 
-        bool Execute();
+        void Execute();
     }
 }

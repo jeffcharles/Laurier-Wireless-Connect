@@ -61,12 +61,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <summary>
         /// Silently installs the SecureW2 EAP client
         /// </summary>
-        /// <returns>Whether the installation was successful</returns>
-        public bool Execute()
+        public void Execute()
         {
             HelperMethods.WriteEmbeddedFileToDisk("SecureW2_EAP_Suite_106.exe");
             Process installSecureW2 = Process.Start(HelperMethods.SetupProcess("SecureW2_EAP_Suite_106", "/S"));
-            return HelperMethods.MonitorProcessOutput(installSecureW2);
+            HelperMethods.MonitorProcessOutput(installSecureW2);
         }
     }
 }

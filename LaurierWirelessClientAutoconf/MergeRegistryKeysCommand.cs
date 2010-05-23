@@ -63,12 +63,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <summary>
         /// Merge SecureW2 default profile settings and blank user credentials for profile into the registry
         /// </summary>
-        /// <returns>Whether merge was successful</returns>
-        public bool Execute()
+        public void Execute()
         {
             HelperMethods.WriteEmbeddedFileToDisk("SecureW2_ProfileSetup.reg");
             Process mergeRegistryKeys = Process.Start(HelperMethods.SetupProcess("REG", "IMPORT SecureW2_ProfileSetup.reg"));
-            return HelperMethods.MonitorProcessOutput(mergeRegistryKeys);
+            HelperMethods.MonitorProcessOutput(mergeRegistryKeys);
         }
     }
 }

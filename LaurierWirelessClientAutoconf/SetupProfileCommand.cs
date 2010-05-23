@@ -59,8 +59,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <summary>
         /// Adds the appropriate Laurier Wireless profile to the Windows wireless profiles
         /// </summary>
-        /// <returns>Whether the profile was added successfully</returns>
-        public bool Execute()
+        public void Execute()
         {
             string laurierWirelessXml = getLaurierWirelessXml();
             if (laurierWirelessXml != null)
@@ -70,10 +69,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                 {
                     wlanIface.SetProfile(0, laurierWirelessXml, true);
                 }
-                return true;
             }
-            // TODO: flag that there was an issue reading the embedded resource
-            return false;
         }
 
         /// <summary>
