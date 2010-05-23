@@ -34,15 +34,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// Checks the std output and err of the provided process and returns true if neither contains anything
         /// </summary>
         /// <param name="process">The process to monitor standard output and error for</param>
-        /// <returns>True if there is no standard output or error, false if there is</returns>
-        public static bool MonitorProcessOutput(Process process)
+        public static void MonitorProcessOutput(Process process)
         {
-            StreamReader stdOutput = process.StandardOutput;
-            StreamReader stdErr = process.StandardError;
+            string stdErr = process.StandardError.ReadToEnd();
             process.WaitForExit();
-
-            // TODO: Return what is in standard error or standard output or null if nothing
-            return (stdOutput.ReadToEnd() == "" && stdErr.ReadToEnd() == "") ? true : false;
+            // TODO: Throw exception if there is something in stdErr
         }
 
         /// <summary>
