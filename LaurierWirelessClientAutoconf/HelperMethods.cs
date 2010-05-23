@@ -64,6 +64,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>A configured process start info object</returns>
         public static ProcessStartInfo SetupProcess(string filePath, string arguments)
         {
+            if (filePath == null || arguments == null)
+            {
+                throw new ArgumentNullException();
+            }
+            
             ProcessStartInfo psi = new ProcessStartInfo(filePath, arguments);
             psi.RedirectStandardError = true;
             psi.RedirectStandardOutput = true;
