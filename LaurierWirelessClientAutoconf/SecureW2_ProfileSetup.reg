@@ -1,4 +1,4 @@
-﻿Windows Registry Editor Version 5.00
+Windows Registry Editor Version 5.00
 
 [HKEY_CURRENT_USER\Software\SecureW2\SecureW2 TTLS\3.0.0\Profiles\DEFAULT\Credentials]
 "PromptUser"=hex:01
