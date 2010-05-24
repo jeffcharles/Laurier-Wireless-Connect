@@ -35,6 +35,8 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         [STAThread]
         static void Main()
         {
+            Application.EnableVisualStyles();
+
             CheckOperatingSystem();
 
             ICommand installSecureW2 = new InstallSecureW2Command();
