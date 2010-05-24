@@ -74,7 +74,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         /// <returns>True if the client is installed, false if not</returns>
         protected bool IsInstalled()
         {
-            return (File.Exists("C:/Program Files/SecureW2/Uninstall.exe") || File.Exists("C:/Program Files (x86)/SecureW2/Uninstall.exe"));
+            string programFilesX86 = Environment.GetEnvironmentVariable("ProgramFiles(x86)");
+            string programFilesPath = (String.IsNullOrEmpty(programFilesX86)) ? 
+                Environment.GetEnvironmentVariable("ProgramFiles") : programFilesX86;
+            
+            return File.Exists(programFilesPath + "/SecureW2/Uninstall.exe");
         }
     }
 }
