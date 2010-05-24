@@ -32,5 +32,23 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Update the value in the label describing the command being executed
+        /// </summary>
+        /// <param name="commandDescription">A string describing the command being executed</param>
+        public void UpdateCurrentCommandDescriptionLabel(string commandDescription)
+        {
+            labelCurrentCommandDescription.Text = commandDescription;
+        }
+
+        /// <summary>
+        /// Update the position of the setup progress bar
+        /// </summary>
+        /// <param name="value">An integer between 0 and 3, with 0 being the left and 3 being the right</param>
+        public void UpdateSetupProgressBarValue(int value)
+        {
+            progressBarSetup.Value = value;
+        }
     }
 }
