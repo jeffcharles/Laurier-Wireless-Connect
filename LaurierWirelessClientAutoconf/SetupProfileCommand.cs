@@ -72,11 +72,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             string filename = "";
             if (System.Environment.OSVersion.Version.Major == 5)
             {
-                filename = "LaurierWirelessClientAutoconf.laurierwirelessprofile_nt5.xml";
+                filename = "OpenSourceAtLaurier.LaurierWirelessClientAutoconf.laurierwirelessprofile_nt5.xml";
             }
             else
             {
-                filename = "LaurierWirelessClientAutoconf.laurierwirelessprofile_nt6.xml";
+                filename = "OpenSourceAtLaurier.LaurierWirelessClientAutoconf.laurierwirelessprofile_nt6.xml";
             }
 
             
