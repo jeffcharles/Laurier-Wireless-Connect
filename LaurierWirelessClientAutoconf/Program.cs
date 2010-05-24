@@ -40,6 +40,23 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormSetupProgress());
+
+            ICommand installSecureW2 = new InstallSecureW2Command();
+            ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
+            ICommand setupProfile = new SetupProfileCommand();
+
+            try
+            {
+                installSecureW2.Execute();
+                mergeRegistryKeys.Execute();
+                setupProfile.Execute();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("An error occurred: " + e.Message);
+            }
+
+            Application.Exit();
         }
 
         /// <summary>
@@ -63,29 +80,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                     Application.Exit();
                 }
             }
-        }
-
-        /// <summary>
-        /// Execute all of the commands necessary to configure the client to work with Laurier Wireless
-        /// </summary>
-        public static void ExecuteCommands()
-        {
-            ICommand installSecureW2 = new InstallSecureW2Command();
-            ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
-            ICommand setupProfile = new SetupProfileCommand();
-
-            try
-            {
-                installSecureW2.Execute();
-                mergeRegistryKeys.Execute();
-                setupProfile.Execute();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("An error occurred: " + e.Message);
-            }
-
-            Application.Exit();
         }
 
         /// <summary>
