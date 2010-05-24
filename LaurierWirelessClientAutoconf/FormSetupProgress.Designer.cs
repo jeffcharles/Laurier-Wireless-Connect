@@ -57,9 +57,9 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             this.labelOsl = new System.Windows.Forms.Label();
             this.labelCurrentCommandDescription = new System.Windows.Forms.Label();
             this.GroupBoxSteps = new System.Windows.Forms.GroupBox();
-            this.labelInstallSecureW2Description = new System.Windows.Forms.Label();
-            this.labelRegisterSecureW2Settings = new System.Windows.Forms.Label();
             this.labelSetupWirelessProfile = new System.Windows.Forms.Label();
+            this.labelRegisterSecureW2Settings = new System.Windows.Forms.Label();
+            this.labelInstallSecureW2Description = new System.Windows.Forms.Label();
             this.GroupBoxSteps.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,14 +112,14 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             this.GroupBoxSteps.TabStop = false;
             this.GroupBoxSteps.Text = "Steps";
             // 
-            // labelInstallSecureW2Description
+            // labelSetupWirelessProfile
             // 
-            this.labelInstallSecureW2Description.AutoSize = true;
-            this.labelInstallSecureW2Description.Location = new System.Drawing.Point(7, 20);
-            this.labelInstallSecureW2Description.Name = "labelInstallSecureW2Description";
-            this.labelInstallSecureW2Description.Size = new System.Drawing.Size(152, 13);
-            this.labelInstallSecureW2Description.TabIndex = 0;
-            this.labelInstallSecureW2Description.Text = "1. Install SecureW2 EAP client";
+            this.labelSetupWirelessProfile.AutoSize = true;
+            this.labelSetupWirelessProfile.Location = new System.Drawing.Point(7, 67);
+            this.labelSetupWirelessProfile.Name = "labelSetupWirelessProfile";
+            this.labelSetupWirelessProfile.Size = new System.Drawing.Size(118, 13);
+            this.labelSetupWirelessProfile.TabIndex = 2;
+            this.labelSetupWirelessProfile.Text = "3. Setup wireless profile";
             // 
             // labelRegisterSecureW2Settings
             // 
@@ -130,14 +130,14 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             this.labelRegisterSecureW2Settings.TabIndex = 1;
             this.labelRegisterSecureW2Settings.Text = "2. Register SecureW2 settings";
             // 
-            // labelSetupWirelessProfile
+            // labelInstallSecureW2Description
             // 
-            this.labelSetupWirelessProfile.AutoSize = true;
-            this.labelSetupWirelessProfile.Location = new System.Drawing.Point(7, 67);
-            this.labelSetupWirelessProfile.Name = "labelSetupWirelessProfile";
-            this.labelSetupWirelessProfile.Size = new System.Drawing.Size(118, 13);
-            this.labelSetupWirelessProfile.TabIndex = 2;
-            this.labelSetupWirelessProfile.Text = "3. Setup wireless profile";
+            this.labelInstallSecureW2Description.AutoSize = true;
+            this.labelInstallSecureW2Description.Location = new System.Drawing.Point(7, 20);
+            this.labelInstallSecureW2Description.Name = "labelInstallSecureW2Description";
+            this.labelInstallSecureW2Description.Size = new System.Drawing.Size(152, 13);
+            this.labelInstallSecureW2Description.TabIndex = 0;
+            this.labelInstallSecureW2Description.Text = "1. Install SecureW2 EAP client";
             // 
             // FormSetupProgress
             // 
@@ -149,7 +149,9 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             this.Controls.Add(this.labelOsl);
             this.Controls.Add(this.linkLableOsl);
             this.Controls.Add(this.progressBarSetup);
+            this.MaximizeBox = false;
             this.Name = "FormSetupProgress";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Laurier Wireless Client Autoconfiguration | Open Source at Laurier";
             this.GroupBoxSteps.ResumeLayout(false);
             this.GroupBoxSteps.PerformLayout();
