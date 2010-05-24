@@ -28,16 +28,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 {
     class SetupProfileCommand : ICommand
     {
-        private const string humanReadableDescription = "Setup Laurier Wireless Windows wireless profile";
         private const string humanReadableExecutionDescription = "Now setting up Laurier Wireless Windows wireless profile";
-
-        public string HumanReadableDescription
-        {
-            get
-            {
-                return humanReadableDescription;
-            }
-        }
 
         public string HumanReadableExecutionDescription
         {

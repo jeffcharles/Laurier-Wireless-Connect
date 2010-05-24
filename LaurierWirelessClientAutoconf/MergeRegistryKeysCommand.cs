@@ -32,16 +32,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 {
     class MergeRegistryKeysCommand : ICommand
     {
-        private const string humanReadableDescription = "Register SecureW2 EAP client settings";
         private const string humanReadableExecutionDescription = "Now registering SecureW2 EAP client settings";
-
-        public string HumanReadableDescription
-        {
-            get
-            {
-                return humanReadableDescription;
-            }
-        }
 
         public string HumanReadableExecutionDescription
         {

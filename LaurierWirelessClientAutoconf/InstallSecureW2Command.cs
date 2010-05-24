@@ -31,16 +31,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 {
     class InstallSecureW2Command : ICommand
     {
-        private const string humanReadableDescription = "Install SecureW2 EAP client";
         private const string humanReadableExecutionDescription = "Now installing SecureW2 EAP client";
-
-        public string HumanReadableDescription
-        {
-            get
-            {
-                return humanReadableDescription;
-            }
-        }
 
         public string HumanReadableExecutionDescription
         {
