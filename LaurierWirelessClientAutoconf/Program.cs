@@ -46,9 +46,16 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
 
             try
             {
+                fsp.UpdateCurrentCommandDescriptionLabel(installSecureW2.HumanReadableExecutionDescription);
                 installSecureW2.Execute();
+                fsp.UpdateSetupProgressBarValue(1);
+                fsp.UpdateCurrentCommandDescriptionLabel(mergeRegistryKeys.HumanReadableExecutionDescription);
                 mergeRegistryKeys.Execute();
+                fsp.UpdateSetupProgressBarValue(2);
+                fsp.UpdateCurrentCommandDescriptionLabel(setupProfile.HumanReadableExecutionDescription);
                 setupProfile.Execute();
+                fsp.UpdateSetupProgressBarValue(3);
+                fsp.UpdateCurrentCommandDescriptionLabel("");
             }
             catch (Exception e)
             {
