@@ -50,10 +50,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             {
                 throw new ProcessException(errorMsgIfFailure, process.ExitCode);
             }
-            else if(stdErr != "")
-            {
-                throw new ProcessException(errorMsgIfFailure, stdErr);
-            }
         }
 
         /// <summary>

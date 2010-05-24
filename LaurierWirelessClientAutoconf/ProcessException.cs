@@ -31,21 +31,12 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
     public class ProcessException : ApplicationException
     {
         private int exitCode;
-        private string standardError;
 
         public int ExitCode
         {
             get
             {
                 return exitCode;
-            }
-        }
-        
-        public string StandardError
-        {
-            get
-            {
-                return standardError;
             }
         }
 
@@ -63,12 +54,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             : base(message)
         {
             this.exitCode = exitCode;
-        }
-
-        public ProcessException(string message, string standardError)
-            : base(message)
-        {
-            this.standardError = standardError;
         }
 
         public ProcessException(string message, Exception innerException)
