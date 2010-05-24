@@ -37,9 +37,8 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         {
             CheckOperatingSystem();
 
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSetupProgress());
+            FormSetupProgress fsp = new FormSetupProgress();
+            fsp.Show();
 
             ICommand installSecureW2 = new InstallSecureW2Command();
             ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
@@ -56,7 +55,8 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                 MessageBox.Show("An error occurred: " + e.Message);
             }
 
-            Application.Exit();
+            MessageBox.Show("Configuration successfully completed!");
+            fsp.Hide();
         }
 
         /// <summary>
