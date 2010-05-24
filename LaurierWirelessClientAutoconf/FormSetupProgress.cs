@@ -31,6 +31,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         public FormSetupProgress()
         {
             InitializeComponent();
+            Program.ExecuteCommands();
         }
     }
 }
