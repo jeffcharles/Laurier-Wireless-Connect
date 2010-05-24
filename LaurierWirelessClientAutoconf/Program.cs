@@ -37,12 +37,12 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
         {
             CheckOperatingSystem();
 
-            FormSetupProgress fsp = new FormSetupProgress();
-            fsp.Show();
-
             ICommand installSecureW2 = new InstallSecureW2Command();
             ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
             ICommand setupProfile = new SetupProfileCommand();
+
+            FormSetupProgress fsp = new FormSetupProgress();
+            fsp.Show();
 
             try
             {
