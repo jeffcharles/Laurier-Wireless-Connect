@@ -62,6 +62,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             catch (Exception e)
             {
                 MessageBox.Show("An error occurred: " + e.Message);
+                Application.Exit();
             }
 
             MessageBox.Show("Configuration successfully completed!");
