@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Name="LaurierWirelessClientAutoconf" Id="*" UpgradeCode="{2841D3E7-4EE0-45E9-B57A-F39118766C76}" 
+		Language="1033" Codepage="1252" Version="1.0.0.0" Manufacturer="Open Source at Laurier">
+		
+		<Package Id="*" Description="LaurierWirelessClientAutoconf Installer" 
+			Comments="This installer database contains the logic and data necessary to install the LaurierWirelessClientAutoconf tool" 
+			InstallerVersion="100" Languages="1033" SummaryCodepage="1252" Compressed="no" />
+
+		<Icon Id="Icon" SourceFile="../LaurierWirelessClientAutoconf/bin/Release/LaurierWirelessClientAutoconf.exe" />
+			
+		<Condition Message="This application is only supported on Windows XP SP3, Windows Vista SP2, Windows 7, or higher.">
+			<![CDATA[Installed OR (VersionNT = 501 AND ServicePackLevel >= 3) OR (VersionNT = 600 AND ServicePackLevel >= 2) OR (VersionNT >= 601)]]>
+		</Condition>
+			
+		<Media Id="1" />
+		
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="OSL" Name="Open Source at Laurier">
+					<Directory Id="APPLICATIONROOTDIRECTORY" Name="LaurierWirelessClientAutoconf" />
+				</Directory>
+			</Directory>
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="LaurierWirelessClientAutoconf" />
+			</Directory>
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+		
+		<DirectoryRef Id="APPLICATIONROOTDIRECTORY">
+			<Component Id="MainExecutable" Guid="*">
+				<File Id="LaurierWirelessClientAutoconfEXE" Name="LaurierWirelessClientAutoconf.exe" DiskId="1" Source="../LaurierWirelessClientAutoconf/bin/Release/LaurierWirelessClientAutoconf.exe" KeyPath="yes" />
+			</Component>
+			<Component Id="LaurierWirelessClientAutoconfConf" Guid="*">
+				<File Id="LaurierWirelessClientAutoconfConfig" Name="LaurierWirelessClientAutoconf.exe.config" DiskId="1" Source="../LaurierWirelessClientAutoconf/bin/Release/LaurierWirelessClientAutoconf.exe.config" KeyPath="yes" />
+			</Component>
+			<Component Id="ManagedWifiLib" Guid="*">
+				<File Id="ManagedWifiDLL" Name="ManagedWifi.dll" DiskId="1" Source="../managedwifi-1.1/bin/Release/ManagedWifi.dll" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+		
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="StartMenuShortcuts" Guid="*">
+				<Shortcut Id="ApplicationStartMenuShortcut" 
+						  Name="LaurierWirelessClientAutoconf" 
+						  Description="Configures your computer to allow access to the Laurier Wireless network" 
+						  Target="[APPLICATIONROOTDIRECTORY]LaurierWirelessClientAutoconf.exe" 
+						  WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+				<Shortcut Id="UninstallProduct"
+						  Name="Uninstall LaurierWirelessClientAutoconf"
+						  Description="Uninstalls LaurierWirelessClientAutoconf"
+						  Target="[System64Folder]msiexec.exe"
+						  Arguments="/x [ProductCode]" />
+				<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\Open Source at Laurier\LaurierWirelessClientAutoconf" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+		
+		<DirectoryRef Id="DesktopFolder">
+			<Component Id="DesktopShortcut" Guid="*">
+				<Shortcut Id="ApplicationDesktopShortcut"
+						  Name="LaurierWirelessClientAutoconf"
+						  Description="Configures your computer to allow access to the Laurier Wireless network"
+						  Target="[APPLICATIONROOTDIRECTORY]LaurierWirelessClientAutoconf.exe"
+						  WorkingDirectory="APPLICATIONROOTDIRECTORY" />
+				<RegistryValue Root="HKCU" Key="Software\Open Source at Laurier\LaurierWirelessClientAutoconf" Name="desktop" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+
+		<Feature Id="Complete" Level="1">
+			<ComponentRef Id="MainExecutable" />
+			<ComponentRef Id="LaurierWirelessClientAutoconfConf" />
+			<ComponentRef Id="ManagedWifiLib" />
+			<ComponentRef Id="StartMenuShortcuts" />
+			<ComponentRef Id="DesktopShortcut" />
+		</Feature>
+		
+		<Property Id="ARPPRODUCTICON" Value="Icon" />
+
+		<CustomAction Id="LaunchApplication" FileKey="LaurierWirelessClientAutoconfEXE" ExeCommand="" Execute="immediate" Impersonate="yes" Return="asyncNoWait" />
+		
+		<UI>
+			<UIRef Id="WixUI_Minimal" />
+			<Publish Dialog="ExitDialog"
+					 Control="Finish"
+					 Event="DoAction"
+					 Value="LaunchApplication">NOT Installed</Publish>
+		</UI>
+
+	</Product>
+</Wix>
