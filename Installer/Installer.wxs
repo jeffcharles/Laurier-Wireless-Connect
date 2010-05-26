@@ -86,6 +86,8 @@
 					 Event="DoAction"
 					 Value="LaunchApplication">NOT Installed</Publish>
 		</UI>
+		
+		<WixVariable Id="WixUILicenseRtf" Value="gplv3.rtf" />
 
 	</Product>
 </Wix>
