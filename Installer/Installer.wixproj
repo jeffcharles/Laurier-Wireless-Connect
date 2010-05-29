@@ -33,7 +33,10 @@
     <None Include="gplv3.rtf" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperFile Include="Microsoft.Net.Framework.3.0">
+	<BootstrapperFile Include="Microsoft.Net.Framework.2.0.SP2">
+		<ProductName>.NET Framework 2.0</ProductName>
+	</BootstrapperFile>
+    <BootstrapperFile Include="Microsoft.Net.Framework.3.0.SP2">
         <ProductName>.NET Framework 3.0</ProductName>
     </BootstrapperFile>
     <BootstrapperFile Include="Microsoft.Windows.Installer.3.1">
