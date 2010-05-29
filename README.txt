@@ -9,6 +9,8 @@ To set up your development machine to compile this application:
 
 3. Download and install the .NET 3.0 SP2 and .NET 2.0 SP2 bootstrapper packages, available at http://msdn.microsoft.com/en-ca/vstudio/bb898654.aspx
 
+4. Download the Windows Installer 3.1 Redistributable exe, available at http://www.microsoft.com/downloads/details.aspx?familyid=889482fc-5f56-4a38-b838-de776fd4138c&displaylang=en#filelist and place it in the Windows Installer 3.1 bootstrapper folder, normally located at C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages\WindowsInstaller3_1
+
 Contact Information:
 --------------------
 
