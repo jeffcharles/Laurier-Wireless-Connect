@@ -78,7 +78,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             {
                 MessageBox.Show("Your operating system does not meet the minimum requirements for this application.",
                     "Unsupportable operating system");
-                Application.Exit();
+                Environment.Exit(1);
             }
 
             if (!IsClientOfficiallySupported())
@@ -87,7 +87,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
                     It may or may not run successfully. Do you wish to continue?", "Unsupported operating system",
                                                                                  MessageBoxButtons.YesNo) == DialogResult.No)
                 {
-                    Application.Exit();
+                    Environment.Exit(1);
                 }
             }
         }
