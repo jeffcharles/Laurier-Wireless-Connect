@@ -152,7 +152,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf
             this.MaximizeBox = false;
             this.Name = "FormSetupProgress";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "Laurier Wireless Client Autoconfiguration | Open Source at Laurier";
+            this.Text = "Laurier Wireless Connect | Open Source at Laurier";
             this.GroupBoxSteps.ResumeLayout(false);
             this.GroupBoxSteps.PerformLayout();
             this.ResumeLayout(false);
