@@ -8,8 +8,8 @@
     <ProjectGuid>{67503E1A-60EE-4273-89B8-5227CFA7EB4B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OpenSourceAtLaurier.LaurierWirelessClientAutoconf</RootNamespace>
-    <AssemblyName>LaurierWirelessClientAutoconf</AssemblyName>
+    <RootNamespace>OpenSourceAtLaurier.LaurierWirelessConnect</RootNamespace>
+    <AssemblyName>LaurierWirelessConnect</AssemblyName>
     <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>LaurierWirelessAutoConf.exe.manifest</ApplicationManifest>
+    <ApplicationManifest>LaurierWirelessConnect.exe.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -69,7 +69,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
-    <None Include="LaurierWirelessAutoConf.exe.manifest" />
+    <None Include="LaurierWirelessConnect.exe.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

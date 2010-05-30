@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OpenSourceAtLaurier.LaurierWirelessClientAutoconf.Properties {
+namespace OpenSourceAtLaurier.LaurierWirelessConnect.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
