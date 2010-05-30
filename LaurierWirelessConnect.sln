@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaurierWirelessConnect", "LaurierWirelessClientAutoconf\LaurierWirelessConnect.csproj", "{67503E1A-60EE-4273-89B8-5227CFA7EB4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LaurierWirelessConnect", "LaurierWirelessConnect\LaurierWirelessConnect.csproj", "{67503E1A-60EE-4273-89B8-5227CFA7EB4B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagedWifi", "managedwifi-1.1\ManagedWifi.csproj", "{6AA425C9-EA6A-4B01-AAED-5FF122E8B663}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Installer", "Installer\Installer.wixproj", "{30D546CB-A567-4ACF-A46F-9578B5BAE8BC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67503E1A-60EE-4273-89B8-5227CFA7EB4B} = {67503E1A-60EE-4273-89B8-5227CFA7EB4B}
+		{6AA425C9-EA6A-4B01-AAED-5FF122E8B663} = {6AA425C9-EA6A-4B01-AAED-5FF122E8B663}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

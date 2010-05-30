@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("A program for automatically configuring Windows clients to connect to the Laurier Wireless network")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Open Source at Laurier")]
-[assembly: AssemblyProduct("Laurier Wireless Client Autoconfiguration Tool")]
+[assembly: AssemblyProduct("Laurier Wireless Connect")]
 [assembly: AssemblyCopyright("Copyright ©  2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
