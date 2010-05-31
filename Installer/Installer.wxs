@@ -77,6 +77,7 @@
 		
 		<Property Id="ARPPRODUCTICON" Value="Icon" />
 
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Laurier Wireless Connect" />
 		<CustomAction Id="LaunchApplication" FileKey="LaurierWirelessConnectEXE" ExeCommand="" Execute="immediate" Impersonate="yes" Return="asyncNoWait" />
 		
 		<UI>
@@ -84,7 +85,7 @@
 			<Publish Dialog="ExitDialog"
 					 Control="Finish"
 					 Event="DoAction"
-					 Value="LaunchApplication">NOT Installed</Publish>
+					 Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
 		</UI>
 		
 		<WixVariable Id="WixUILicenseRtf" Value="gplv3.rtf" />
