@@ -78,6 +78,7 @@
 		<Property Id="ARPPRODUCTICON" Value="Icon" />
 
     <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Laurier Wireless Connect" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
 		<CustomAction Id="LaunchApplication" FileKey="LaurierWirelessConnectEXE" ExeCommand="" Execute="immediate" Impersonate="yes" Return="asyncNoWait" />
 		
 		<UI>
