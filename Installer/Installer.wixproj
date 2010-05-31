@@ -27,32 +27,26 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Installer.wxs" />
+    <Compile Include="Installer.wxs">
+      <SubType>Designer</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="gplv3.rtf" />
   </ItemGroup>
   <ItemGroup>
-	<BootstrapperFile Include="Microsoft.Net.Framework.2.0.SP2">
-		<ProductName>.NET Framework 2.0</ProductName>
-	</BootstrapperFile>
+    <BootstrapperFile Include="Microsoft.Net.Framework.2.0.SP2">
+      <ProductName>.NET Framework 2.0</ProductName>
+    </BootstrapperFile>
     <BootstrapperFile Include="Microsoft.Net.Framework.3.0.SP2">
-        <ProductName>.NET Framework 3.0</ProductName>
+      <ProductName>.NET Framework 3.0</ProductName>
     </BootstrapperFile>
     <BootstrapperFile Include="Microsoft.Windows.Installer.3.1">
-        <ProductName>Windows Installer 3.1</ProductName>
+      <ProductName>Windows Installer 3.1</ProductName>
     </BootstrapperFile>
   </ItemGroup>
-
   <Import Project="$(WixTargetsPath)" />
-  
   <Target Name="AfterBuild">
-    <GenerateBootstrapper ApplicationFile="$(TargetFileName)" 
-                          ApplicationName="LaurierWirelessClientAutoconf"
-                          BootstrapperItems="@(BootstrapperFile)"
-                          ComponentsLocation="Relative"
-                          CopyComponents="True"
-                          OutputPath="$(OutputPath)"
-                          Path="C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\"/>
+    <GenerateBootstrapper ApplicationFile="$(TargetFileName)" ApplicationName="LaurierWirelessClientAutoconf" BootstrapperItems="@(BootstrapperFile)" ComponentsLocation="Relative" CopyComponents="True" OutputPath="$(OutputPath)" Path="C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\" />
   </Target>
 </Project>
