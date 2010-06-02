@@ -100,8 +100,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         {
             System.OperatingSystem osInfo = System.Environment.OSVersion;
 
-            Version requiredMinimumVersion = new Version(5, 1, 5512);
-
             bool isXpSp3 = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && osInfo.Version.Build == 5512);
             bool isVistaSp2 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && osInfo.Version.Build == 6002);
             bool is7Sp0 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1 && osInfo.Version.Build == 7600);
@@ -116,8 +114,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         static bool IsClientSupportable()
         {
             System.OperatingSystem osInfo = System.Environment.OSVersion;
-
-            Version requiredMinimumVersion = new Version(5, 1, 5512);
 
             bool isXpSp3OrGreater = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && osInfo.Version.Build >= 5512);
             bool isVistaSp2OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && osInfo.Version.Build >= 6002);
