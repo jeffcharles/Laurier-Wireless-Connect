@@ -63,7 +63,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             catch (Exception e)
             {
                 MessageBox.Show("An error occurred: " + e.Message);
-                Application.Exit();
+                Environment.Exit(2);
             }
 
             MessageBox.Show(String.Format("Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
