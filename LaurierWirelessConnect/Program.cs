@@ -88,7 +88,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                     It may or may not run successfully. Do you wish to continue?", "Unsupported operating system",
                                                                                  MessageBoxButtons.YesNo) == DialogResult.No)
                 {
-                    Environment.Exit(1);
+                    Environment.Exit(3);
                 }
             }
         }
