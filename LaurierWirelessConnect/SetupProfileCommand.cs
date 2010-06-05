@@ -22,6 +22,7 @@
 // </copyright>
 #endregion
 
+using System;
 using System.Reflection;
 
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
@@ -47,6 +48,10 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             if (laurierWirelessXml != null)
             {
                 NativeWifi.WlanClient client = new NativeWifi.WlanClient();
+                if (client.Interfaces.Length == 0)
+                {
+                    throw new ApplicationException("No wireless interfaces detected");
+                }
                 foreach (NativeWifi.WlanClient.WlanInterface wlanIface in client.Interfaces)
                 {
                     wlanIface.SetProfile(0, laurierWirelessXml, true);
