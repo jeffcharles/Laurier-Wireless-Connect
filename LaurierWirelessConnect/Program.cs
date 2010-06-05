@@ -23,6 +23,7 @@
 #endregion
 
 using System;
+using System.Management;
 using System.Windows.Forms;
 
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
@@ -93,16 +94,32 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         }
 
         /// <summary>
+        /// Returns the major version of the service pack installed on the client's operating system
+        /// </summary>
+        /// <returns>The major version of the currently installed operating system service pack</returns>
+        static int GetServicePackMajorVersion()
+        {
+            SelectQuery query = new SelectQuery("SELECT ServicePackMajorVersion FROM Win32_OperatingSystem");
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject mo in searcher.Get())
+            {
+                return int.Parse(mo["ServicePackMajorVersion"].ToString());
+            }
+            throw new ApplicationException("Unable to determine Service Pack major version.");
+        }
+
+        /// <summary>
         /// Returns whether the application has been tested successfully on this operating system
         /// </summary>
         /// <returns>True if the application has been tested successfully with this operating system, false if not</returns>
         static bool IsClientOfficiallySupported()
         {
             System.OperatingSystem osInfo = System.Environment.OSVersion;
+            int servicePackMajorVersion = GetServicePackMajorVersion();
 
-            bool isXpSp3 = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && osInfo.Version.Build == 5512);
-            bool isVistaSp2 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && osInfo.Version.Build == 6002);
-            bool is7Sp0 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1 && osInfo.Version.Build == 7600);
+            bool isXpSp3 = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && servicePackMajorVersion == 3);
+            bool isVistaSp2 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && servicePackMajorVersion == 2);
+            bool is7Sp0 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1 && servicePackMajorVersion == 0);
 
             return (isXpSp3 || isVistaSp2 || is7Sp0) ? true : false;
         }
@@ -114,10 +131,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         static bool IsClientSupportable()
         {
             System.OperatingSystem osInfo = System.Environment.OSVersion;
+            int servicePackMajorVersion = GetServicePackMajorVersion();
 
-            bool isXpSp3OrGreater = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && osInfo.Version.Build >= 5512);
-            bool isVistaSp2OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && osInfo.Version.Build >= 6002);
-            bool is7Sp0OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1  && osInfo.Version.Build >= 7600);
+            bool isXpSp3OrGreater = (osInfo.Version.Major == 5 && osInfo.Version.Minor == 1 && servicePackMajorVersion >= 3);
+            bool isVistaSp2OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && servicePackMajorVersion >= 2);
+            bool is7Sp0OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1);
             bool isGreaterThan7 = (osInfo.Version.Major >= 7);
 
             return (isXpSp3OrGreater || isVistaSp2OrGreater || is7Sp0OrGreater || isGreaterThan7) ? true : false;
