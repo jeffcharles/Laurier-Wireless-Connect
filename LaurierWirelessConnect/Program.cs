@@ -121,7 +121,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             bool isVistaSp2 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 0 && servicePackMajorVersion == 2);
             bool is7Sp0 = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1 && servicePackMajorVersion == 0);
 
-            return (isXpSp3 || isVistaSp2 || is7Sp0) ? true : false;
+            return (isXpSp3 || isVistaSp2 || is7Sp0);
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             bool is7Sp0OrGreater = (osInfo.Version.Major == 6 && osInfo.Version.Minor == 1);
             bool isGreaterThan7 = (osInfo.Version.Major >= 7);
 
-            return (isXpSp3OrGreater || isVistaSp2OrGreater || is7Sp0OrGreater || isGreaterThan7) ? true : false;
+            return (isXpSp3OrGreater || isVistaSp2OrGreater || is7Sp0OrGreater || isGreaterThan7);
         }
     }
 }
