@@ -83,7 +83,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 throw new ArgumentNullException();
             }
 
-            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream("OpenSourceAtLaurier.LaurierWirelessConnect." + filename))
+            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(String.Format("OpenSourceAtLaurier.LaurierWirelessConnect.{0}", filename)))
             using (Stream output = File.Create(filename))
             {
                 byte[] buffer = new byte[8192];
