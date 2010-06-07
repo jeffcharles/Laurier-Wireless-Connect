@@ -96,7 +96,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
 
             if (!File.Exists(filename))
             {
-                throw new IOException("Error writing " + filename + " to disk.");
+                throw new IOException(String.Format("Error writing {0} to disk.", filename));
             }
         }
     }
