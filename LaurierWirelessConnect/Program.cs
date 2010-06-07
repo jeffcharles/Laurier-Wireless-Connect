@@ -62,7 +62,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             }
             catch (Exception e)
             {
-                MessageBox.Show("An error occurred: " + e.Message);
+                MessageBox.Show(String.Format("An error occurred: {0}", e.Message));
                 Environment.Exit(2);
             }
 
