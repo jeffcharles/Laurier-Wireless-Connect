@@ -6,7 +6,7 @@
     <ProductVersion>3.0</ProductVersion>
     <ProjectGuid>{30D546CB-A567-4ACF-A46F-9578B5BAE8BC}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>LaurierWirelessClientAutoconf</OutputName>
+    <OutputName>Laurier Wireless Connect</OutputName>
     <OutputType>package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.0\Wix.targets</WixTargetsPath>
     <FileUpgradeFlags>
@@ -47,6 +47,6 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <Target Name="AfterBuild">
-    <GenerateBootstrapper ApplicationFile="$(TargetFileName)" ApplicationName="LaurierWirelessClientAutoconf" BootstrapperItems="@(BootstrapperFile)" ComponentsLocation="Relative" CopyComponents="True" OutputPath="$(OutputPath)" Path="C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\" />
+    <GenerateBootstrapper ApplicationFile="$(TargetFileName)" ApplicationName="Laurier Wireless Connect" BootstrapperItems="@(BootstrapperFile)" ComponentsLocation="Relative" CopyComponents="True" OutputPath="$(OutputPath)" Path="C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\" />
   </Target>
 </Project>
