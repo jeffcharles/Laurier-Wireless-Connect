@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Name="Laurier Wireless Connect" Id="*" UpgradeCode="{2841D3E7-4EE0-45E9-B57A-F39118766C76}" 
-		Language="1033" Codepage="1252" Version="1.0.0.0" Manufacturer="Open Source at Laurier">
+		Language="1033" Codepage="1252" Version="1.0.0" Manufacturer="Open Source at Laurier">
 		
 		<Package Id="*" Description="Laurier Wireless Connect Installer" 
 			Comments="This installer database contains the logic and data necessary to install the Laurier Wireless Connect application" 
