@@ -38,10 +38,10 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-
             try
             {
+                Application.EnableVisualStyles();
+
                 CheckOperatingSystem();
 
                 ICommand installSecureW2 = new InstallSecureW2Command();
@@ -61,15 +61,15 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 setupProfile.Execute();
                 fsp.UpdateSetupProgressBarValue(3);
                 fsp.UpdateCurrentCommandDescriptionLabel("");
+
+                MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
+                fsp.Hide();
             }
             catch (Exception e)
             {
                 MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "An error occurred: {0}", e.Message));
                 Environment.Exit(2);
             }
-
-            MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
-            fsp.Hide();
         }
 
         /// <summary>
