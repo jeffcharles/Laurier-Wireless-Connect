@@ -105,7 +105,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             {
                 return int.Parse(mo["ServicePackMajorVersion"].ToString());
             }
-            throw new ApplicationException("Unable to determine Service Pack major version.");
+            throw new Exception("Unable to determine Service Pack major version.");
         }
 
         /// <summary>
