@@ -27,6 +27,7 @@ using System.Globalization;
 using System.Management;
 using System.Windows.Forms;
 
+[assembly:CLSCompliant(true)]
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
 {
     static class Program
