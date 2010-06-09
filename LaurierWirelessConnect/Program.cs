@@ -105,9 +105,16 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
             foreach (ManagementObject mo in searcher.Get())
             {
-                return int.Parse(mo["ServicePackMajorVersion"].ToString(), CultureInfo.InvariantCulture);
+                try
+                {
+                    return int.Parse(mo["ServicePackMajorVersion"].ToString(), CultureInfo.InvariantCulture);
+                }
+                catch (Exception e)
+                {
+                    throw new WmiException("Unable to determine Service Pack major version.", e);
+                }
             }
-            throw new Exception("Unable to determine Service Pack major version.");
+            throw new WmiException("Unable to determine Service Pack major version.");
         }
 
         /// <summary>
