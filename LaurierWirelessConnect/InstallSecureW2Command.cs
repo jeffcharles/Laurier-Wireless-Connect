@@ -63,7 +63,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         /// Returns whether the SecureW2 EAP client is installed
         /// </summary>
         /// <returns>True if the client is installed, false if not</returns>
-        protected bool IsInstalled()
+        protected static bool IsInstalled()
         {
             string programFilesX86 = Environment.GetEnvironmentVariable("ProgramFiles(x86)");
             string programFilesPath = (String.IsNullOrEmpty(programFilesX86)) ? 
