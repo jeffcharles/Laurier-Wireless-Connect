@@ -5,7 +5,7 @@
 		
 		<Package Id="*" Description="Laurier Wireless Connect Installer" 
 			Comments="This installer database contains the logic and data necessary to install the Laurier Wireless Connect application" 
-			InstallerVersion="100" Languages="1033" SummaryCodepage="1252" Compressed="no" />
+			InstallerVersion="100" Languages="1033" SummaryCodepage="1252" Compressed="yes" />
 
 		<Icon Id="Icon" SourceFile="../LaurierWirelessConnect/bin/Release/LaurierWirelessConnect.exe" />
 			
@@ -13,7 +13,7 @@
 			<![CDATA[Installed OR (VersionNT = 501 AND ServicePackLevel >= 3) OR (VersionNT = 600 AND ServicePackLevel >= 2) OR (VersionNT >= 601)]]>
 		</Condition>
 			
-		<Media Id="1" />
+		<Media Id="1" Cabinet="CAB001.cab" EmbedCab="yes" />
 		
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
