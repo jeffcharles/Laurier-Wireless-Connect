@@ -24,6 +24,7 @@
 
 using System;
 using System.Runtime.Serialization;
+using System.Security.Permissions;
 
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
 {
@@ -61,9 +62,16 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         {
         }
 
-        public ProcessException(SerializationInfo info, StreamingContext context)
+        protected ProcessException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
+            
+        }
+
+        [SecurityPermission(SecurityAction.Demand, SerializationFormatter = true)]
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
         }
     }
 }
