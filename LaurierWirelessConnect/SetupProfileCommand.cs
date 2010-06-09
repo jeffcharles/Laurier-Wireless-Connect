@@ -63,7 +63,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         /// Return the appropriate Windows Native Wifi XML configuration for Laurier Wireless
         /// </summary>
         /// <returns>The XML configuration for Laurier Wireless for use with the Windows Native Wifi API</returns>
-        protected string GetLaurierWirelessXml()
+        protected static string GetLaurierWirelessXml()
         {
             string filename = "";
             if (System.Environment.OSVersion.Version.Major == 5)
