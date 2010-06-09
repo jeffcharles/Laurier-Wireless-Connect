@@ -50,7 +50,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 NativeWifi.WlanClient client = new NativeWifi.WlanClient();
                 if (client.Interfaces.Length == 0)
                 {
-                    throw new Exception("No wireless interfaces detected");
+                    throw new NoWirelessInterfaceException("No wireless interfaces detected");
                 }
                 foreach (NativeWifi.WlanClient.WlanInterface wlanIface in client.Interfaces)
                 {

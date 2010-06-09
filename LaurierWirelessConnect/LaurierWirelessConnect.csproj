@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="ICommand.cs" />
     <Compile Include="MergeRegistryKeysCommand.cs" />
+    <Compile Include="NoWirelessInterfaceException.cs" />
     <Compile Include="ProcessException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
