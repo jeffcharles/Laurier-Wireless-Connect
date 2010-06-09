@@ -54,7 +54,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 File.Delete("SecureW2_EAP_Suite_106.exe");
                 if (!IsInstalled())
                 {
-                    throw new Exception("Error installing SecureW2 EAP client");
+                    throw new InstallationException("Error installing SecureW2 EAP client");
                 }
             }
         }
