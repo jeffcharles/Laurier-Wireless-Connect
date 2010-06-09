@@ -40,17 +40,17 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         {
             Application.EnableVisualStyles();
 
-            CheckOperatingSystem();
-
-            ICommand installSecureW2 = new InstallSecureW2Command();
-            ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
-            ICommand setupProfile = new SetupProfileCommand();
-
-            FormSetupProgress fsp = new FormSetupProgress();
-            fsp.Show();
-
             try
             {
+                CheckOperatingSystem();
+
+                ICommand installSecureW2 = new InstallSecureW2Command();
+                ICommand mergeRegistryKeys = new MergeRegistryKeysCommand();
+                ICommand setupProfile = new SetupProfileCommand();
+
+                FormSetupProgress fsp = new FormSetupProgress();
+                fsp.Show();
+
                 fsp.UpdateCurrentCommandDescriptionLabel(installSecureW2.HumanReadableExecutionDescription);
                 installSecureW2.Execute();
                 fsp.UpdateSetupProgressBarValue(1);
