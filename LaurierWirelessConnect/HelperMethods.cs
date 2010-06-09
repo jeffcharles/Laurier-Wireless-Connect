@@ -65,7 +65,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         {
             if (filePath == null)
             {
-                throw new ArgumentNullException("filepath", "filePath cannot be a null reference");
+                throw new ArgumentNullException("filePath", "filePath cannot be a null reference");
             }
             if (arguments == null)
             {
