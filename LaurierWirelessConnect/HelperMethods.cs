@@ -39,9 +39,13 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         /// <param name="errorMsgIfFailure">A general error message to display if the process fails</param>
         public static void MonitorProcessOutput(Process process, string errorMsgIfFailure)
         {
-            if (process == null || errorMsgIfFailure == null)
+            if (process == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("process", "process cannot be a null reference");
+            }
+            if (errorMsgIfFailure == null)
+            {
+                throw new ArgumentNullException("errorMsgIfFailure", "errorMsgIfFailure cannot be a null reference");
             }
 
             process.WaitForExit();
@@ -59,9 +63,13 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         /// <returns>A configured process start info object</returns>
         public static ProcessStartInfo SetupProcess(string filePath, string arguments)
         {
-            if (filePath == null || arguments == null)
+            if (filePath == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("filepath", "filePath cannot be a null reference");
+            }
+            if (arguments == null)
+            {
+                throw new ArgumentNullException("arguments", "arguments cannot be a null reference");
             }
             
             ProcessStartInfo psi = new ProcessStartInfo(filePath, arguments);
@@ -81,7 +89,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         {
             if (filename == null)
             {
-                throw new ArgumentNullException();
+                throw new ArgumentNullException("filename", "filename cannot be a null reference");
             }
 
             using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(String.Format(CultureInfo.InvariantCulture, "OpenSourceAtLaurier.LaurierWirelessConnect.{0}", filename)))
