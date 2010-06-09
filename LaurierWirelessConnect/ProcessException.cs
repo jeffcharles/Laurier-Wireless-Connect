@@ -28,7 +28,7 @@ using System.Runtime.Serialization;
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
 {
     [Serializable]
-    public class ProcessException : ApplicationException
+    public class ProcessException : Exception
     {
         private int exitCode;
 
