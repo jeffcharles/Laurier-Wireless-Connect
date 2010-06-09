@@ -24,6 +24,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 
@@ -83,7 +84,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 throw new ArgumentNullException();
             }
 
-            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(String.Format("OpenSourceAtLaurier.LaurierWirelessConnect.{0}", filename)))
+            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(String.Format(CultureInfo.InvariantCulture, "OpenSourceAtLaurier.LaurierWirelessConnect.{0}", filename)))
             using (Stream output = File.Create(filename))
             {
                 byte[] buffer = new byte[8192];
@@ -96,7 +97,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
 
             if (!File.Exists(filename))
             {
-                throw new IOException(String.Format("Error writing {0} to disk.", filename));
+                throw new IOException(String.Format(CultureInfo.CurrentCulture, "Error writing {0} to disk.", filename));
             }
         }
     }

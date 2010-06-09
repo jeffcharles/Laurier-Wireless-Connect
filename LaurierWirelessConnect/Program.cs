@@ -23,6 +23,7 @@
 #endregion
 
 using System;
+using System.Globalization;
 using System.Management;
 using System.Windows.Forms;
 
@@ -62,11 +63,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             }
             catch (Exception e)
             {
-                MessageBox.Show(String.Format("An error occurred: {0}", e.Message));
+                MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "An error occurred: {0}", e.Message));
                 Environment.Exit(2);
             }
 
-            MessageBox.Show(String.Format("Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
+            MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
             fsp.Hide();
         }
 
@@ -103,7 +104,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
             foreach (ManagementObject mo in searcher.Get())
             {
-                return int.Parse(mo["ServicePackMajorVersion"].ToString());
+                return int.Parse(mo["ServicePackMajorVersion"].ToString(), CultureInfo.InvariantCulture);
             }
             throw new Exception("Unable to determine Service Pack major version.");
         }
