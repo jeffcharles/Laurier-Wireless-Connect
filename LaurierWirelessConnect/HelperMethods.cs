@@ -92,7 +92,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 throw new ArgumentNullException("filename", "filename cannot be a null reference");
             }
 
-            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(String.Format(CultureInfo.InvariantCulture, "OpenSourceAtLaurier.LaurierWirelessConnect.{0}", filename)))
+            using (Stream input = Assembly.GetExecutingAssembly().GetManifestResourceStream(String.Format(CultureInfo.InvariantCulture, "OpenSourceAtLaurier.LaurierWirelessConnect.EmbeddedResources.{0}", filename)))
             using (Stream output = File.Create(filename))
             {
                 byte[] buffer = new byte[8192];

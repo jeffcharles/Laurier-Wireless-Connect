@@ -98,7 +98,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="SecureW2_ProfileSetup.reg" />
+    <EmbeddedResource Include="EmbeddedResources\SecureW2_ProfileSetup.reg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\managedwifi-1.1\ManagedWifi.csproj">
@@ -107,13 +107,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="laurierwirelessprofile_nt5.xml" />
+    <EmbeddedResource Include="EmbeddedResources\laurierwirelessprofile_nt5.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="laurierwirelessprofile_nt6.xml" />
+    <EmbeddedResource Include="EmbeddedResources\laurierwirelessprofile_nt6.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="SecureW2_EAP_Suite_106.exe" />
+    <EmbeddedResource Include="EmbeddedResources\SecureW2_EAP_Suite_106.exe" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

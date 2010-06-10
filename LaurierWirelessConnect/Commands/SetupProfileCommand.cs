@@ -68,11 +68,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             string filename = "";
             if (System.Environment.OSVersion.Version.Major == 5)
             {
-                filename = "OpenSourceAtLaurier.LaurierWirelessConnect.laurierwirelessprofile_nt5.xml";
+                filename = "OpenSourceAtLaurier.LaurierWirelessConnect.EmbeddedResources.laurierwirelessprofile_nt5.xml";
             }
             else
             {
-                filename = "OpenSourceAtLaurier.LaurierWirelessConnect.laurierwirelessprofile_nt6.xml";
+                filename = "OpenSourceAtLaurier.LaurierWirelessConnect.EmbeddedResources.laurierwirelessprofile_nt6.xml";
             }
 
             
