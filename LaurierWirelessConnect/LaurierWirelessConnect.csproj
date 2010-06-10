@@ -59,20 +59,20 @@
   <ItemGroup>
     <Compile Include="HelperMethods.cs" />
     <Compile Include="Exceptions\InstallationException.cs" />
-    <Compile Include="InstallSecureW2Command.cs" />
+    <Compile Include="Commands\InstallSecureW2Command.cs" />
     <Compile Include="FormSetupProgress.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSetupProgress.Designer.cs">
       <DependentUpon>FormSetupProgress.cs</DependentUpon>
     </Compile>
-    <Compile Include="ICommand.cs" />
-    <Compile Include="MergeRegistryKeysCommand.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\MergeRegistryKeysCommand.cs" />
     <Compile Include="Exceptions\NoWirelessInterfaceException.cs" />
     <Compile Include="Exceptions\ProcessException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetupProfileCommand.cs" />
+    <Compile Include="Commands\SetupProfileCommand.cs" />
     <Compile Include="Exceptions\WmiException.cs" />
     <EmbeddedResource Include="FormSetupProgress.resx">
       <DependentUpon>FormSetupProgress.cs</DependentUpon>
