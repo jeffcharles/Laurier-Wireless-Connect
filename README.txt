@@ -9,10 +9,10 @@ To set up your development machine to compile this application:
 
 3. Download the Windows Installer 3.1 Redistributable exe, available at http://www.microsoft.com/downloads/details.aspx?familyid=889482fc-5f56-4a38-b838-de776fd4138c&displaylang=en#filelist and place it in the Windows Installer 3.1 bootstrapper folder, normally located at C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages\WindowsInstaller3_1
 
-Distribution advice:
---------------------
+Installer Oddities:
+-------------------
 
-When distributing this application, we suggest distributing the MSI file to users running Windows Vista and 7 and to distribute the bootstrapped setup exe file to Windows XP users. The bootstrapped setup exe file will not function properly on Windows Vista or 7 because the .NET 3.0 SP2 package in the bootstrapper is not compatible with Windows Vista or 7, thus we suggest distributing the MSI for these platforms. Since .NET 3.0 is included in both Windows Vista and 7, a .NET 3.0 bootstrapper is not neccessary for these platforms. Windows XP however requires a .NET 3.0 bootstrapper because .NET 3.0 may not be installed, distributing the MSI file to XP users may result in the application refusing to run. We also examined using .NET 2.0, .NET 3.5, .NET 3.5 Client Profile, and .NET 4.0 bootstrappers. The .NET 2.0 bootstrapper is also not compatible with Windows Vista or 7. The .NET 3.5 bootstrapper would force an unacceptably long installation on Windows XP and Vista computers. The .NET 3.5 Client Profile bootstrapper will force a full .NET 3.5 installation (which is unacceptably long) if the user has any other older version of .NET installed. The .NET 4.0 bootstrapper would force a long .NET 4.0 installation for a large majority of clients. It's my opinion that providing the bootstrapped setup exe for Windows XP and the MSI file for Windows Vista and 7 is the least undesirable option as the trade-off between slightly increasing confusion among non-technical users who don't know what operating system they are running is worth it to minimize setup times for Windows Vista and 7 users.
+I used dotNetInstaller <http://dotnetinstaller.codeplex.com/> to generate a bootstrapped installer called Setup.exe in the dotInstaller folder inside the Installer folder. The post-build event for Installer should generate the setup file. The setup file generated will download .NET 2.0 SP1 and install it if the user does not already have it installed.
 
 Contact Information:
 --------------------

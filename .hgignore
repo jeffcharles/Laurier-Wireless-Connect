@@ -38,3 +38,6 @@ _ReSharper*/
 *.msi
 *.wixobj
 *.wixpdb
+
+# Ignore dotNetInstaller setup file
+Installer/dotNetInstaller/Setup.exe
