@@ -16,6 +16,8 @@
     <OldToolsVersion>2.0</OldToolsVersion>
     <CompilerAdditionalOptions>-ext WixUIExtension</CompilerAdditionalOptions>
     <LinkerAdditionalOptions>-ext WixUIExtension</LinkerAdditionalOptions>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -32,6 +34,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="gplv3.rtf" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
