@@ -91,5 +91,8 @@
 		
 		<WixVariable Id="WixUILicenseRtf" Value="gplv3.rtf" />
 
+    <WixVariable Id="WixUIBannerBmp" Value="Banner01.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Banner02.bmp" />
+    
 	</Product>
 </Wix>
