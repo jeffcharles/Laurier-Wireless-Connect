@@ -112,9 +112,29 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAABMLAAATCwAAAAAAAAAA
+        AAD////////////////////////////////////////////////////////////////////4+fnf4+PV
+        29rf4+Dh5/Wguf93nP90mv+nvf/k6O3b39vX3dzW3NvV29ra39709vXEzcvBzMrS2djI0cyxvsZAf+4/
+        if9Pkf8aaf8/dfG2wsbK08/Q2NbP19XU29nV29q9ycbv8vH////2+PjI0czR2s7///36+/9fmP8CWP+R
+        rdPs7ub////////////K09LH0c/9/v3////////V29eHotlWhf0pav8IW/8ecvunvs3o6+b/////////
+        ///N1tTDzcv8/Pz///////6VsOUKV/8Vav8+i/95sv+80+bAycTj6Of////////////f5eO6xsTh5uX8
+        /P309OponOIAV/+SuP//////+//N1OS7x8Tj6Of////////////6+/vU29nAysjGz87Gzsi1zNw0hv8e
+        bP9Bff8iaP9jkOXHz8Lk6Of////////////////+/v7z9fbo7vn09vb///vv+P+nzv+IvP+iy//b6ffr
+        7/T8/f3////////////////7/P/z9//g6//o7//////////////////+/v/i7P/l7f/1+f//////////
+        ///////1+P/g6v/T4v/R4f/s8v/////////9/v/b5//N3v/n7//b5//3+v/////////////c6P/Y5P/W
+        5P/F2f/C1//M3f/N3//H2v/D2P/Q4f/Q3//n7//W5P////////////+70v/b5//I2//K3f+70/+2z/+2
+        z/+50f/E2P/O3//O3//n8P+0zv/////////////L3f/U4//S4v+/1f/C1v+xzP+tyP+40P/F2f/A1v/W
+        5f/G2//Y5v////////////////+50f/C2P/P3//A1f/D1//C1//B1v/C1//V4/+90/++1P//////////
+        ///////////////O3/+jw/+qx/+mxf+nxv+oxf+ryP+oxv/X5P////////////////8AAAAAAAAAAAAA
+        AAAAAK0JAAAAAAAA5QUAAAAAAAAAAAAAAAAAAGUAAABnAAAAaAAAAAAAAAAAAAAAAAAAAAAA
+</value>
+  </data>
 </root>

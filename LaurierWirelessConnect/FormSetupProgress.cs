@@ -23,6 +23,7 @@
 #endregion
 
 using System.Windows.Forms;
+using System;
 
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
 {
@@ -50,5 +51,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         {
             progressBarSetup.Value = value;
         }
+
     }
 }
