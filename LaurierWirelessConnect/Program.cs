@@ -65,12 +65,12 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 if (IsWindowsXp())
                 {
                     MessageBox.Show(String.Format(CultureInfo.CurrentCulture, 
-                        "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.{0}{0}You will also need to restart your computer before you can use the Laurier Wireless network.", 
-                        Environment.NewLine, Environment.NewLine));
+                        "Configuration successfully completed! {0}{0}You can now uninstall Laurier Wireless Connect.{0}{0}You will also need to restart your computer before you can use the Laurier Wireless network.", 
+                        Environment.NewLine));
                 }
                 else
                 {
-                    MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
+                    MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{0}You can now uninstall Laurier Wireless Connect.", Environment.NewLine));
                 }
                 fsp.Hide();
             }
