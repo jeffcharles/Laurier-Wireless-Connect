@@ -57,15 +57,20 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.linkLableOsl = new System.Windows.Forms.LinkLabel();
             this.labelCurrentCommandDescription = new System.Windows.Forms.Label();
             this.GroupBoxSteps = new System.Windows.Forms.GroupBox();
+            this.stepCheckmark3 = new System.Windows.Forms.PictureBox();
+            this.stepCheckmark2 = new System.Windows.Forms.PictureBox();
+            this.stepCheckmark1 = new System.Windows.Forms.PictureBox();
             this.labelSetupWirelessProfile = new System.Windows.Forms.Label();
             this.labelRegisterSecureW2Settings = new System.Windows.Forms.Label();
             this.labelInstallSecureW2Description = new System.Windows.Forms.Label();
             this.TitlePictureBox = new System.Windows.Forms.PictureBox();
             this.OSLPictureBox = new System.Windows.Forms.PictureBox();
-            this.checkmark3 = new System.Windows.Forms.PictureBox();
-            this.checkmark2 = new System.Windows.Forms.PictureBox();
-            this.checkmark1 = new System.Windows.Forms.PictureBox();
             this.GroupBoxSteps.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepCheckmark3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepCheckmark2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepCheckmark1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TitlePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OSLPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // progressBarSetup
@@ -97,9 +102,9 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             // 
             // GroupBoxSteps
             // 
-            this.GroupBoxSteps.Controls.Add(this.checkmark3);
-            this.GroupBoxSteps.Controls.Add(this.checkmark2);
-            this.GroupBoxSteps.Controls.Add(this.checkmark1);
+            this.GroupBoxSteps.Controls.Add(this.stepCheckmark3);
+            this.GroupBoxSteps.Controls.Add(this.stepCheckmark2);
+            this.GroupBoxSteps.Controls.Add(this.stepCheckmark1);
             this.GroupBoxSteps.Controls.Add(this.labelSetupWirelessProfile);
             this.GroupBoxSteps.Controls.Add(this.labelRegisterSecureW2Settings);
             this.GroupBoxSteps.Controls.Add(this.labelInstallSecureW2Description);
@@ -109,6 +114,36 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.GroupBoxSteps.TabIndex = 4;
             this.GroupBoxSteps.TabStop = false;
             this.GroupBoxSteps.Text = "Steps";
+            // 
+            // stepCheckmark3
+            // 
+            this.stepCheckmark3.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
+            this.stepCheckmark3.Location = new System.Drawing.Point(164, 64);
+            this.stepCheckmark3.Name = "stepCheckmark3";
+            this.stepCheckmark3.Size = new System.Drawing.Size(16, 16);
+            this.stepCheckmark3.TabIndex = 10;
+            this.stepCheckmark3.TabStop = false;
+            this.stepCheckmark3.Visible = false;
+            // 
+            // stepCheckmark2
+            // 
+            this.stepCheckmark2.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
+            this.stepCheckmark2.Location = new System.Drawing.Point(164, 41);
+            this.stepCheckmark2.Name = "stepCheckmark2";
+            this.stepCheckmark2.Size = new System.Drawing.Size(16, 16);
+            this.stepCheckmark2.TabIndex = 9;
+            this.stepCheckmark2.TabStop = false;
+            this.stepCheckmark2.Visible = false;
+            // 
+            // stepCheckmark1
+            // 
+            this.stepCheckmark1.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
+            this.stepCheckmark1.Location = new System.Drawing.Point(164, 17);
+            this.stepCheckmark1.Name = "stepCheckmark1";
+            this.stepCheckmark1.Size = new System.Drawing.Size(16, 16);
+            this.stepCheckmark1.TabIndex = 8;
+            this.stepCheckmark1.TabStop = false;
+            this.stepCheckmark1.Visible = false;
             // 
             // labelSetupWirelessProfile
             // 
@@ -157,36 +192,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.OSLPictureBox.TabIndex = 5;
             this.OSLPictureBox.TabStop = false;
             // 
-            // checkmark3
-            // 
-            this.checkmark3.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
-            this.checkmark3.Location = new System.Drawing.Point(164, 64);
-            this.checkmark3.Name = "checkmark3";
-            this.checkmark3.Size = new System.Drawing.Size(16, 16);
-            this.checkmark3.TabIndex = 10;
-            this.checkmark3.TabStop = false;
-            this.checkmark3.Visible = false;
-            // 
-            // checkmark2
-            // 
-            this.checkmark2.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
-            this.checkmark2.Location = new System.Drawing.Point(164, 41);
-            this.checkmark2.Name = "checkmark2";
-            this.checkmark2.Size = new System.Drawing.Size(16, 16);
-            this.checkmark2.TabIndex = 9;
-            this.checkmark2.TabStop = false;
-            this.checkmark2.Visible = false;
-            // 
-            // checkmark1
-            // 
-            this.checkmark1.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
-            this.checkmark1.Location = new System.Drawing.Point(164, 17);
-            this.checkmark1.Name = "checkmark1";
-            this.checkmark1.Size = new System.Drawing.Size(16, 16);
-            this.checkmark1.TabIndex = 8;
-            this.checkmark1.TabStop = false;
-            this.checkmark1.Visible = false;
-            // 
             // FormSetupProgress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -205,6 +210,11 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.Text = "Laurier Wireless Connect | Open Source at Laurier";
             this.GroupBoxSteps.ResumeLayout(false);
             this.GroupBoxSteps.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stepCheckmark3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepCheckmark2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stepCheckmark1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TitlePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OSLPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,9 +230,9 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
         private System.Windows.Forms.Label labelRegisterSecureW2Settings;
         private System.Windows.Forms.Label labelInstallSecureW2Description;
         private System.Windows.Forms.PictureBox OSLPictureBox;
-        private System.Windows.Forms.PictureBox checkmark3;
-        private System.Windows.Forms.PictureBox checkmark2;
-        private System.Windows.Forms.PictureBox checkmark1;
+        private System.Windows.Forms.PictureBox stepCheckmark3;
+        private System.Windows.Forms.PictureBox stepCheckmark2;
+        private System.Windows.Forms.PictureBox stepCheckmark1;
         private System.Windows.Forms.PictureBox TitlePictureBox;
     }
 }

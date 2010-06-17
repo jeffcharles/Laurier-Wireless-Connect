@@ -22,13 +22,29 @@
 // </copyright>
 #endregion
 
-using System.Windows.Forms;
 using System;
+using System.Globalization;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace OpenSourceAtLaurier.LaurierWirelessConnect
 {
     public partial class FormSetupProgress : Form
     {
+        /// <summary>
+        /// Displays the checkmark next to the step number specified
+        /// </summary>
+        /// <param name="stepNumber">The number of the step to display the checkmark next to</param>
+        public void DisplayStepCheckmark(int stepNumber)
+        {
+            Control c = GroupBoxSteps.Controls[String.Format(CultureInfo.InvariantCulture, "stepCheckmark{0}", stepNumber)];
+            if(c == null)
+            {
+                throw new ArgumentOutOfRangeException("stepNumber", "The step number you provided is higher than the number of steps displayed on the form.");
+            }
+            c.Visible = true;
+        }
+        
         public FormSetupProgress()
         {
             InitializeComponent();

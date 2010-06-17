@@ -53,12 +53,15 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
 
                 fsp.UpdateCurrentCommandDescriptionLabel(installSecureW2.HumanReadableExecutionDescription);
                 installSecureW2.Execute();
+                fsp.DisplayStepCheckmark(1);
                 fsp.UpdateSetupProgressBarValue(1);
                 fsp.UpdateCurrentCommandDescriptionLabel(mergeRegistryKeys.HumanReadableExecutionDescription);
                 mergeRegistryKeys.Execute();
+                fsp.DisplayStepCheckmark(2);
                 fsp.UpdateSetupProgressBarValue(2);
                 fsp.UpdateCurrentCommandDescriptionLabel(setupProfile.HumanReadableExecutionDescription);
                 setupProfile.Execute();
+                fsp.DisplayStepCheckmark(3);
                 fsp.UpdateSetupProgressBarValue(3);
                 fsp.UpdateCurrentCommandDescriptionLabel("");
 
