@@ -62,7 +62,16 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 fsp.UpdateSetupProgressBarValue(3);
                 fsp.UpdateCurrentCommandDescriptionLabel("");
 
-                MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
+                if (IsWindowsXp())
+                {
+                    MessageBox.Show(String.Format(CultureInfo.CurrentCulture, 
+                        "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.{0}{0}You will also need to restart your computer before you can use the Laurier Wireless network.", 
+                        Environment.NewLine, Environment.NewLine));
+                }
+                else
+                {
+                    MessageBox.Show(String.Format(CultureInfo.CurrentCulture, "Configuration successfully completed! {0}{1}You can now uninstall Laurier Wireless Connect.", Environment.NewLine, Environment.NewLine));
+                }
                 fsp.Hide();
             }
             catch (Exception e)
@@ -148,6 +157,15 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             bool isGreaterThan7 = (osInfo.Version.Major >= 7);
 
             return (isXpSp3OrGreater || isVistaSp2OrGreater || is7Sp0OrGreater || isGreaterThan7);
+        }
+
+        /// <summary>
+        /// Returns whether or not the client operating system is Windows XP
+        /// </summary>
+        /// <returns>True if the client operating system is Windows XP, false if not</returns>
+        static bool IsWindowsXp()
+        {
+            return (System.Environment.OSVersion.Version.Major == 5);
         }
     }
 }
