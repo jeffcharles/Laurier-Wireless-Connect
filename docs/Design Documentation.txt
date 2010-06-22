@@ -1,0 +1,32 @@
+# Design Documentation #
+
+## Purpose of the application ##
+
+Laurier Wireless Connect is a .NET application that installs SecureW2, sets up registry entries for SecureW2 for working with the Laurier Wireless network, and sets up a Windows wireless profile for connecting to Laurier Wireless.
+
+## Locations ##
+
+* Installer -> contains a WiX project for creating an MSI installer for Laurier Wireless Connect as well as a bootstrapper for installing .NET 2.0 SP1 on Windows XP systems
+	* dotNetInstaller -> contains the necessary binaries for generating a .NET bootstrapper setup binary along with the configuration file and final setup binary
+* LaurierWirelessConnect -> contains main Laurier Wireless Connect application
+	* Commands -> contains command classes as well as command interface
+	* EmbeddedResources -> contains resources that need to be embedded into the Laurier Wireless Connect binary
+	* Exceptions -> contains custom exceptions for Laurier Wireless Connect
+	* Resources -> contains resources for use on the form
+* ManagedWifi -> contains ManagedWifi project from CodePlex
+
+## Organization of Laurier Wireless Connect ##
+
+The configuration of the client system is separated into three steps:
+
+	1. Installing SecureW2
+	2. Merging registry settings for SecureW2
+	3. Setting up a Windows wireless profile for Laurier Wireless
+
+Each step is contained inside its own command. Commands need to define a human readable execution description as well as implement an `Execute` method. The main file Program.cs instantiates each command and runs its `Execute` method. Meanwhile a form is displayed which graphically presents the user with the current progress of the application's execution. The message loop is never initialized so execution flow is completely handled by the program and not the user. If an exception occurs it is displayed to the user in a message box and the application will exit.
+
+Before executing each command, the application will check to see if the client operating system is supported and if it is supportable. Supported means the particular combination of major version, minor version, and service pack have been tested prior to beta release of that version of the application. Supportable means that the application may or may not work as intended because it hasn't been tested on that platform but it is not below the minimum requirements. If the platform isn't supported or supportable, the application will exit.
+
+## Organization of the Installer ##
+
+The installer will generate an msi file from the release executable for the application. After successfully building, a post-build command is executed to build a setup binary in the dotNetInstaller folder containing a .NET bootstrapper. The binary setup file generated in the dotNetInstaller folder can be distributed on its own.
