@@ -14,6 +14,11 @@ Installer Oddities:
 
 I used dotNetInstaller <http://dotnetinstaller.codeplex.com/> to generate a bootstrapped installer called Setup.exe in the dotInstaller folder inside the Installer folder. The post-build event for Installer should generate the setup file. The setup file generated will download .NET 2.0 SP1 and install it if the user does not already have it installed.
 
+More Documentation:
+-------------------
+
+Please see the docs folder for more documentation.
+
 Contact Information:
 --------------------
 
