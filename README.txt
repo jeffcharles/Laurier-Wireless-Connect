@@ -24,3 +24,12 @@ Contact Information:
 
 Maintainer: Jeffrey Charles <jeffrey.charles@wluopensource.org>
 Open Source at Laurier: <info@wluopensource.org>
+
+Thank you's:
+------------
+
+I'd like to thank the following projects for making this application possible:
+
+* Managed Wifi API <http://managedwifi.codeplex.com/>
+* Windows Installer XML (WiX) toolset <http://wix.sourceforge.net/>
+* dotNetInstaller <http://dotnetinstaller.codeplex.com/>
