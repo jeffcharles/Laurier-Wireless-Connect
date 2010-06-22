@@ -63,7 +63,7 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
                 setupProfile.Execute();
                 fsp.DisplayStepCheckmark(3);
                 fsp.UpdateSetupProgressBarValue(3);
-                fsp.UpdateCurrentCommandDescriptionLabel("");
+                fsp.UpdateCurrentCommandDescriptionLabel("Configuration completed!");
 
                 if (IsWindowsXp())
                 {
