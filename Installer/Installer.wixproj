@@ -39,6 +39,6 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PostBuildEvent>"$(ProjectDir)dotNetInstaller\InstallerLinker" /o:"$(ProjectDir)dotNetInstaller\Setup.exe" /t:"$(ProjectDir)dotNetInstaller\dotNetInstaller.exe" /c:"$(ProjectDir)dotNetInstaller\config.xml" /a:"$(ProjectDir)dotNetInstaller" /r:"$(ProjectDir)bin\Release\*.msi" /i:"$(SolutionDir)\LaurierWirelessConnect\Resources\OSL icon.ico"</PostBuildEvent>
+    <PostBuildEvent>"$(ProjectDir)dotNetInstaller\InstallerLinker" /o:"$(ProjectDir)bin\Release\Setup.exe" /t:"$(ProjectDir)dotNetInstaller\dotNetInstaller.exe" /c:"$(ProjectDir)dotNetInstaller\config.xml" /a:"$(ProjectDir)dotNetInstaller" /r:"$(ProjectDir)bin\Release\*.msi" /i:"$(SolutionDir)\LaurierWirelessConnect\Resources\OSL icon.ico"</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -7,7 +7,7 @@ Laurier Wireless Connect is a .NET application that installs SecureW2, sets up r
 ## Locations ##
 
 * Installer -> contains a WiX project for creating an MSI installer for Laurier Wireless Connect as well as a bootstrapper for installing .NET 2.0 SP1 on Windows XP systems
-	* dotNetInstaller -> contains the necessary binaries for generating a .NET bootstrapper setup binary along with the configuration file and final setup binary
+	* dotNetInstaller -> contains the necessary binaries for generating a .NET bootstrapper setup binary along with the configuration file
 * LaurierWirelessConnect -> contains main Laurier Wireless Connect application
 	* Commands -> contains command classes as well as command interface
 	* EmbeddedResources -> contains resources that need to be embedded into the Laurier Wireless Connect binary
@@ -29,4 +29,4 @@ Before executing each command, the application will check to see if the client o
 
 ## Organization of the Installer ##
 
-The installer will generate an msi file from the release executable for the application. After successfully building, a post-build command is executed to build a setup binary in the dotNetInstaller folder containing a .NET bootstrapper. The binary setup file generated in the dotNetInstaller folder can be distributed on its own.
+The installer will generate an msi file from the release executable for the application. After successfully building, a post-build command is executed to build a setup binary in the Installer\bin\Release folder containing a .NET bootstrapper. The bootstrapped binary setup file generated can be distributed on its own.

@@ -9,10 +9,12 @@ To set up your development machine to compile this application:
 
 3. Download the Windows Installer 3.1 Redistributable exe, available at http://www.microsoft.com/downloads/details.aspx?familyid=889482fc-5f56-4a38-b838-de776fd4138c&displaylang=en#filelist and place it in the Windows Installer 3.1 bootstrapper folder, normally located at C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages\WindowsInstaller3_1
 
+The Installer build will fail for `Debug|Any CPU` unless you have built a `Release|Any CPU` build prior to building a debug version. If you get an error about missing executable files while building a debug version, then attempt to build a release version before attempting to build the debug version.
+
 Installer Oddities:
 -------------------
 
-I used dotNetInstaller <http://dotnetinstaller.codeplex.com/> to generate a bootstrapped installer called Setup.exe in the dotInstaller folder inside the Installer folder. The post-build event for Installer should generate the setup file. The setup file generated will download .NET 2.0 SP1 and install it if the user does not already have it installed.
+I used dotNetInstaller <http://dotnetinstaller.codeplex.com/> to generate a bootstrapped installer called Setup.exe in the `Installer\bin\Release` folder. The post-build event for Installer should generate the setup file. The setup file generated will download .NET 2.0 SP1 and install it if the user does not already have it installed.
 
 More Documentation:
 -------------------
