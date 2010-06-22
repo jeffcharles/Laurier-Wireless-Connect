@@ -57,14 +57,14 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.linkLableOsl = new System.Windows.Forms.LinkLabel();
             this.labelCurrentCommandDescription = new System.Windows.Forms.Label();
             this.GroupBoxSteps = new System.Windows.Forms.GroupBox();
+            this.checkmark3 = new System.Windows.Forms.PictureBox();
+            this.checkmark2 = new System.Windows.Forms.PictureBox();
+            this.checkmark1 = new System.Windows.Forms.PictureBox();
             this.labelSetupWirelessProfile = new System.Windows.Forms.Label();
             this.labelRegisterSecureW2Settings = new System.Windows.Forms.Label();
             this.labelInstallSecureW2Description = new System.Windows.Forms.Label();
             this.TitlePictureBox = new System.Windows.Forms.PictureBox();
             this.OSLPictureBox = new System.Windows.Forms.PictureBox();
-            this.checkmark3 = new System.Windows.Forms.PictureBox();
-            this.checkmark2 = new System.Windows.Forms.PictureBox();
-            this.checkmark1 = new System.Windows.Forms.PictureBox();
             this.GroupBoxSteps.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,36 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.GroupBoxSteps.TabIndex = 4;
             this.GroupBoxSteps.TabStop = false;
             this.GroupBoxSteps.Text = "Steps";
+            // 
+            // checkmark3
+            // 
+            this.checkmark3.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
+            this.checkmark3.Location = new System.Drawing.Point(164, 64);
+            this.checkmark3.Name = "checkmark3";
+            this.checkmark3.Size = new System.Drawing.Size(16, 16);
+            this.checkmark3.TabIndex = 10;
+            this.checkmark3.TabStop = false;
+            this.checkmark3.Visible = false;
+            // 
+            // checkmark2
+            // 
+            this.checkmark2.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
+            this.checkmark2.Location = new System.Drawing.Point(164, 41);
+            this.checkmark2.Name = "checkmark2";
+            this.checkmark2.Size = new System.Drawing.Size(16, 16);
+            this.checkmark2.TabIndex = 9;
+            this.checkmark2.TabStop = false;
+            this.checkmark2.Visible = false;
+            // 
+            // checkmark1
+            // 
+            this.checkmark1.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
+            this.checkmark1.Location = new System.Drawing.Point(164, 17);
+            this.checkmark1.Name = "checkmark1";
+            this.checkmark1.Size = new System.Drawing.Size(16, 16);
+            this.checkmark1.TabIndex = 8;
+            this.checkmark1.TabStop = false;
+            this.checkmark1.Visible = false;
             // 
             // labelSetupWirelessProfile
             // 
@@ -156,36 +186,6 @@ namespace OpenSourceAtLaurier.LaurierWirelessConnect
             this.OSLPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.OSLPictureBox.TabIndex = 5;
             this.OSLPictureBox.TabStop = false;
-            // 
-            // checkmark3
-            // 
-            this.checkmark3.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
-            this.checkmark3.Location = new System.Drawing.Point(164, 64);
-            this.checkmark3.Name = "checkmark3";
-            this.checkmark3.Size = new System.Drawing.Size(16, 16);
-            this.checkmark3.TabIndex = 10;
-            this.checkmark3.TabStop = false;
-            this.checkmark3.Visible = false;
-            // 
-            // checkmark2
-            // 
-            this.checkmark2.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
-            this.checkmark2.Location = new System.Drawing.Point(164, 41);
-            this.checkmark2.Name = "checkmark2";
-            this.checkmark2.Size = new System.Drawing.Size(16, 16);
-            this.checkmark2.TabIndex = 9;
-            this.checkmark2.TabStop = false;
-            this.checkmark2.Visible = false;
-            // 
-            // checkmark1
-            // 
-            this.checkmark1.Image = global::OpenSourceAtLaurier.LaurierWirelessConnect.Properties.Resources.orangeCheckmark;
-            this.checkmark1.Location = new System.Drawing.Point(164, 17);
-            this.checkmark1.Name = "checkmark1";
-            this.checkmark1.Size = new System.Drawing.Size(16, 16);
-            this.checkmark1.TabIndex = 8;
-            this.checkmark1.TabStop = false;
-            this.checkmark1.Visible = false;
             // 
             // FormSetupProgress
             // 
