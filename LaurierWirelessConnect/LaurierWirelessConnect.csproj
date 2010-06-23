@@ -141,7 +141,6 @@
     <None Include="Resources\Laurier Wireless Connect small.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Laurier Wireless Connect Icon 64.ico" />
     <Content Include="Resources\OSL icon.ico" />
     <Content Include="Resources\osl_small.ico" />
   </ItemGroup>
