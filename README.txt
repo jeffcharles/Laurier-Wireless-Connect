@@ -3,11 +3,11 @@ Thank you very much for taking the time to download the source code for this pro
 To set up your development machine to compile this application:
 ---------------------------------------------------------------
 
-1. Download and install WiX 3.0, available at http://sourceforge.net/projects/wix/files/
+1. Download and install a version of Microsoft Visual C# 2010 (Visual C# express is freely available at http://www.microsoft.com/express/downloads/#2010-Visual-CS)
 
-2. Download and install the .NET 3.0 SP2 and .NET 2.0 SP2 bootstrapper packages, available at http://msdn.microsoft.com/en-ca/vstudio/bb898654.aspx
+2. Download and install Python and Mercurial, available at http://www.python.org/download/ and http://mercurial.selenic.com/ respectively
 
-3. Download the Windows Installer 3.1 Redistributable exe, available at http://www.microsoft.com/downloads/details.aspx?familyid=889482fc-5f56-4a38-b838-de776fd4138c&displaylang=en#filelist and place it in the Windows Installer 3.1 bootstrapper folder, normally located at C:\Program Files\Microsoft SDKs\Windows\v7.0A\Bootstrapper\Packages\WindowsInstaller3_1
+3. Download and install WiX 3.0, available at http://sourceforge.net/projects/wix/files/
 
 The Installer build will fail for `Debug|Any CPU` unless you have built a `Release|Any CPU` build prior to building a debug version. If you get an error about missing executable files while building a debug version, then attempt to build a release version before attempting to build the debug version.
 
