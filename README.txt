@@ -5,7 +5,7 @@ To set up your development machine to compile this application:
 
 1. Download and install a version of Microsoft Visual C# 2010 (Visual C# express is freely available at http://www.microsoft.com/express/downloads/#2010-Visual-CS)
 
-2. Download and install Python and Mercurial, available at http://www.python.org/download/ and http://mercurial.selenic.com/ respectively
+2. Download and install Python, Mercurial, and TortoiseHg, available at http://www.python.org/download/ and http://mercurial.selenic.com/downloads/ respectively
 
 3. Download and install WiX 3.0, available at http://sourceforge.net/projects/wix/files/
 
