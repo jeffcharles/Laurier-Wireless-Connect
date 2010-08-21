@@ -12,7 +12,7 @@
     <security>
       <authEncryption>
         <authentication>WPA</authentication>
-        <encryption>TKIP</encryption>
+        <encryption>AES</encryption>
         <useOneX>true</useOneX>
       </authEncryption>
       <OneX xmlns="http://www.microsoft.com/networking/OneX/v1">
